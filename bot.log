@@ -1,0 +1,2214 @@
+2025-03-05 23:53:12,492 - root - INFO - Логирование настроено.
+2025-03-05 23:53:12,492 - root - INFO - Запуск бота...
+2025-03-05 23:53:12,707 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-05 23:53:12,707 - aiogram.dispatcher - INFO - Start polling
+2025-03-05 23:53:12,936 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-05 23:53:15,891 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-05 23:53:16,147 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-05 23:53:16,148 - root - INFO - Бот завершает работу...
+2025-03-05 23:56:31,986 - root - INFO - Логирование настроено.
+2025-03-05 23:56:31,986 - root - INFO - Запуск бота...
+2025-03-05 23:56:32,307 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-05 23:56:32,309 - aiogram.dispatcher - INFO - Start polling
+2025-03-05 23:56:32,459 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-05 23:56:52,174 - aiogram.event - INFO - Update id=864039730 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-05 23:57:14,817 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-05 23:57:15,246 - aiogram.event - INFO - Update id=864039731 is handled. Duration 422 ms by bot id=8127535202
+2025-03-05 23:57:20,877 - root - INFO - Пользователь 2008871219 начал создание события.
+2025-03-05 23:57:21,083 - aiogram.event - INFO - Update id=864039732 is handled. Duration 202 ms by bot id=8127535202
+2025-03-05 23:57:26,491 - root - INFO - Пользователь 2008871219 ввел название события: lolik
+2025-03-05 23:57:26,692 - aiogram.event - INFO - Update id=864039733 is handled. Duration 202 ms by bot id=8127535202
+2025-03-05 23:57:28,895 - root - INFO - Пользователь 2008871219 выбрал дату: 2025-3-10
+2025-03-05 23:57:29,225 - aiogram.event - INFO - Update id=864039734 is handled. Duration 327 ms by bot id=8127535202
+2025-03-05 23:57:42,670 - root - INFO - Пользователь 2008871219 ввел описание события: popoika
+2025-03-05 23:57:42,671 - root - INFO - Событие 'lolik' создано пользователем 2008871219.
+2025-03-05 23:57:42,840 - root - ERROR - Ошибка при добавлении события в базу данных: connection was closed in the middle of operation
+2025-03-05 23:57:42,841 - aiogram.event - INFO - Update id=864039735 is not handled. Duration 172 ms by bot id=8127535202
+2025-03-05 23:57:42,843 - aiogram.event - ERROR - Cause exception while process update id=864039735 by bot id=8127535202
+UnboundLocalError: cannot access local variable 'conn' where it is not associated with a value
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\create_event.py", line 45, in process_event_description
+    await save_event(message, state)
+  File "D:\BraiLook\AI_Assist\handlers\create_event.py", line 54, in save_event
+    await add_event(message.from_user.id, event_name, event_description, event_date)
+  File "D:\BraiLook\AI_Assist\database\crud.py", line 16, in add_event
+    await conn.close()
+          ^^^^
+UnboundLocalError: cannot access local variable 'conn' where it is not associated with a value
+2025-03-05 23:58:46,479 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-05 23:58:46,735 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-05 23:58:46,737 - root - INFO - Бот завершает работу...
+2025-03-05 23:58:56,192 - root - INFO - Логирование настроено.
+2025-03-05 23:58:56,192 - root - INFO - Запуск бота...
+2025-03-05 23:58:56,445 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-05 23:58:56,445 - aiogram.dispatcher - INFO - Start polling
+2025-03-05 23:58:56,909 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-05 23:59:05,340 - aiogram.event - INFO - Update id=864039736 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-05 23:59:08,657 - aiogram.event - INFO - Update id=864039737 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-05 23:59:12,723 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-05 23:59:13,222 - aiogram.event - INFO - Update id=864039738 is handled. Duration 500 ms by bot id=8127535202
+2025-03-05 23:59:15,073 - root - INFO - Пользователь 2008871219 начал создание события.
+2025-03-05 23:59:15,240 - aiogram.event - INFO - Update id=864039739 is handled. Duration 172 ms by bot id=8127535202
+2025-03-05 23:59:22,814 - root - INFO - Пользователь 2008871219 ввел название события: lolik
+2025-03-05 23:59:23,022 - aiogram.event - INFO - Update id=864039740 is handled. Duration 202 ms by bot id=8127535202
+2025-03-05 23:59:27,526 - root - INFO - Пользователь 2008871219 выбрал дату: 2025-3-6
+2025-03-05 23:59:27,630 - aiogram.event - INFO - Update id=864039741 is handled. Duration 109 ms by bot id=8127535202
+2025-03-05 23:59:34,376 - root - INFO - Пользователь 2008871219 ввел описание события: popoika
+2025-03-05 23:59:34,376 - root - INFO - Событие 'lolik' создано пользователем 2008871219.
+2025-03-05 23:59:34,480 - root - ERROR - Ошибка при добавлении события в базу данных: connection was closed in the middle of operation
+2025-03-05 23:59:34,578 - aiogram.event - INFO - Update id=864039742 is not handled. Duration 202 ms by bot id=8127535202
+2025-03-05 23:59:34,579 - aiogram.event - ERROR - Cause exception while process update id=864039742 by bot id=8127535202
+ValueError: time data '2025-3-6' does not match format '%Y-%m-%d %H:%M'
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\create_event.py", line 45, in process_event_description
+    await save_event(message, state)
+  File "D:\BraiLook\AI_Assist\handlers\create_event.py", line 58, in save_event
+    event_datetime = datetime.strptime(event_date, "%Y-%m-%d %H:%M")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\_strptime.py", line 555, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\_strptime.py", line 333, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2025-3-6' does not match format '%Y-%m-%d %H:%M'
+2025-03-06 00:06:49,068 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 00:06:49,324 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2685)
+2025-03-06 00:06:49,324 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-06 00:06:49,329 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 00:06:49,331 - root - INFO - Бот завершает работу...
+2025-03-06 00:06:55,106 - root - INFO - Логирование настроено.
+2025-03-06 00:06:55,107 - root - INFO - Запуск бота...
+2025-03-06 00:06:55,415 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 00:06:55,416 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 00:06:56,592 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 00:07:03,410 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 00:07:03,751 - aiogram.event - INFO - Update id=864039743 is handled. Duration 344 ms by bot id=8127535202
+2025-03-06 00:07:05,378 - root - INFO - Пользователь 2008871219 начал создание события.
+2025-03-06 00:07:05,505 - aiogram.event - INFO - Update id=864039744 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 00:07:09,782 - root - INFO - Пользователь 2008871219 ввел название события: lolik
+2025-03-06 00:07:09,990 - aiogram.event - INFO - Update id=864039745 is handled. Duration 203 ms by bot id=8127535202
+2025-03-06 00:07:13,663 - root - INFO - Пользователь 2008871219 выбрал дату: 2025-3-6
+2025-03-06 00:07:13,964 - aiogram.event - INFO - Update id=864039746 is handled. Duration 297 ms by bot id=8127535202
+2025-03-06 00:07:19,827 - root - INFO - Пользователь 2008871219 выбрал время: 09:00
+2025-03-06 00:07:19,895 - aiogram.event - INFO - Update id=864039747 is handled. Duration 62 ms by bot id=8127535202
+2025-03-06 00:07:26,795 - root - INFO - Пользователь 2008871219 ввел описание события: popoika
+2025-03-06 00:07:26,798 - root - INFO - Событие 'lolik' создано пользователем 2008871219.
+2025-03-06 00:07:26,930 - root - ERROR - Ошибка при добавлении события в базу данных: connection was closed in the middle of operation
+2025-03-06 00:07:27,383 - root - INFO - Запланировано уведомление для пользователя 2008871219 о событии 'lolik'.
+2025-03-06 00:07:27,447 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-06 00:07:27,447 - aiogram.event - INFO - Update id=864039748 is handled. Duration 656 ms by bot id=8127535202
+2025-03-06 00:11:59,564 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 00:11:59,838 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 00:11:59,839 - root - INFO - Бот завершает работу...
+2025-03-06 00:26:09,742 - root - INFO - Логирование настроено.
+2025-03-06 00:26:09,743 - root - INFO - Запуск бота...
+2025-03-06 00:26:09,970 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 00:26:09,971 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 00:26:10,235 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 00:26:15,304 - aiogram.event - INFO - Update id=864039749 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 00:26:19,957 - aiogram.event - INFO - Update id=864039750 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 00:26:24,460 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 00:26:24,649 - aiogram.event - INFO - Update id=864039751 is handled. Duration 187 ms by bot id=8127535202
+2025-03-06 00:26:29,072 - aiogram.event - INFO - Update id=864039752 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 00:26:31,662 - root - INFO - Пользователь 2008871219 начал создание события.
+2025-03-06 00:26:31,795 - aiogram.event - INFO - Update id=864039753 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 00:26:36,856 - root - INFO - Пользователь 2008871219 ввел название события: popka
+2025-03-06 00:26:37,065 - aiogram.event - INFO - Update id=864039754 is handled. Duration 219 ms by bot id=8127535202
+2025-03-06 00:26:39,262 - root - INFO - Пользователь 2008871219 выбрал год: 2025
+2025-03-06 00:26:39,414 - aiogram.event - INFO - Update id=864039755 is handled. Duration 155 ms by bot id=8127535202
+2025-03-06 00:26:42,279 - root - INFO - Пользователь 2008871219 выбрал месяц: 2
+2025-03-06 00:26:42,364 - aiogram.event - INFO - Update id=864039756 is handled. Duration 94 ms by bot id=8127535202
+2025-03-06 00:26:44,941 - aiogram.event - INFO - Update id=864039757 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 00:26:48,308 - root - INFO - Пользователь 2008871219 выбрал дату: 2025-02-02
+2025-03-06 00:26:48,419 - aiogram.event - INFO - Update id=864039758 is handled. Duration 109 ms by bot id=8127535202
+2025-03-06 00:26:49,860 - root - INFO - Пользователь 2008871219 выбрал время: 09:00
+2025-03-06 00:26:49,929 - aiogram.event - INFO - Update id=864039759 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 00:26:52,724 - root - INFO - Пользователь 2008871219 пропустил описание события.
+2025-03-06 00:26:52,796 - root - INFO - Событие 'popka' создано пользователем 2008871219.
+2025-03-06 00:26:52,904 - root - ERROR - Ошибка при добавлении события в базу данных: connection was closed in the middle of operation
+2025-03-06 00:26:53,026 - root - INFO - Запланировано уведомление для пользователя 2008871219 о событии 'popka'.
+2025-03-06 00:26:53,079 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-06 00:26:53,080 - aiogram.event - INFO - Update id=864039760 is handled. Duration 359 ms by bot id=8127535202
+2025-03-06 00:26:55,385 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 00:26:55,468 - aiogram.event - INFO - Update id=864039761 is handled. Duration 92 ms by bot id=8127535202
+2025-03-06 00:27:00,201 - root - INFO - Пользователь 2008871219 запросил консультацию.
+2025-03-06 00:27:00,202 - aiogram.event - INFO - Update id=864039762 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 00:27:00,202 - aiogram.event - ERROR - Cause exception while process update id=864039762 by bot id=8127535202
+AttributeError: module 'openai' has no attribute 'Completion'
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\consult.py", line 17, in consult
+    advice = await openai_client.get_advice("Как подготовиться к событию?")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\openai\client.py", line 9, in get_advice
+    response = openai.Completion.create(
+               ^^^^^^^^^^^^^^^^^
+AttributeError: module 'openai' has no attribute 'Completion'
+2025-03-06 00:28:17,030 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 00:28:17,293 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 00:28:17,294 - root - INFO - Бот завершает работу...
+2025-03-06 00:28:22,738 - root - INFO - Логирование настроено.
+2025-03-06 00:28:22,739 - root - INFO - Запуск бота...
+2025-03-06 00:28:23,013 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 00:28:23,014 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 00:28:23,352 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 00:28:30,545 - root - INFO - Пользователь 2008871219 начал создание события.
+2025-03-06 00:28:32,192 - aiogram.event - INFO - Update id=864039763 is handled. Duration 1656 ms by bot id=8127535202
+2025-03-06 00:28:47,328 - root - INFO - Пользователь 2008871219 ввел название события: Очень важное событие - встреча с клиентами
+2025-03-06 00:28:47,513 - aiogram.event - INFO - Update id=864039764 is handled. Duration 187 ms by bot id=8127535202
+2025-03-06 00:28:49,256 - root - INFO - Пользователь 2008871219 выбрал год: 2025
+2025-03-06 00:28:50,484 - aiogram.event - INFO - Update id=864039765 is handled. Duration 1234 ms by bot id=8127535202
+2025-03-06 00:28:55,799 - root - INFO - Пользователь 2008871219 выбрал месяц: 3
+2025-03-06 00:28:55,887 - aiogram.event - INFO - Update id=864039766 is handled. Duration 79 ms by bot id=8127535202
+2025-03-06 00:29:00,010 - root - INFO - Пользователь 2008871219 выбрал дату: 2025-03-06
+2025-03-06 00:29:00,083 - aiogram.event - INFO - Update id=864039767 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 00:29:02,075 - root - INFO - Пользователь 2008871219 выбрал время: 09:00
+2025-03-06 00:29:02,145 - aiogram.event - INFO - Update id=864039768 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 00:29:13,533 - root - INFO - Пользователь 2008871219 ввел описание события: подписание договора купли-родажи
+2025-03-06 00:29:13,536 - root - INFO - Событие 'Очень важное событие - встреча с клиентами' создано пользователем 2008871219.
+2025-03-06 00:29:13,637 - root - ERROR - Ошибка при добавлении события в базу данных: connection was closed in the middle of operation
+2025-03-06 00:29:14,238 - root - INFO - Запланировано уведомление для пользователя 2008871219 о событии 'Очень важное событие - встреча с клиентами'.
+2025-03-06 00:29:14,242 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-06 00:29:14,243 - aiogram.event - INFO - Update id=864039769 is handled. Duration 703 ms by bot id=8127535202
+2025-03-06 00:29:17,236 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 00:29:17,302 - aiogram.event - INFO - Update id=864039770 is handled. Duration 61 ms by bot id=8127535202
+2025-03-06 00:29:22,026 - root - INFO - Пользователь 2008871219 запросил консультацию.
+2025-03-06 00:29:22,026 - root - ERROR - Ошибка при запросе к OpenAI: module 'openai' has no attribute 'ChatCompletion'
+2025-03-06 00:29:22,027 - root - INFO - OpenAI ответил: Произошла ошибка при обработке запроса. Пожалуйста, попробуйте позже.
+2025-03-06 00:29:22,128 - aiogram.event - INFO - Update id=864039771 is handled. Duration 109 ms by bot id=8127535202
+2025-03-06 00:30:28,158 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 00:30:28,414 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 00:30:28,416 - root - INFO - Бот завершает работу...
+2025-03-06 00:30:49,778 - root - INFO - Логирование настроено.
+2025-03-06 00:30:49,780 - root - INFO - Запуск бота...
+2025-03-06 00:30:50,110 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 00:30:50,117 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 00:30:50,605 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 00:30:51,341 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 00:30:51,760 - aiogram.event - INFO - Update id=864039772 is handled. Duration 422 ms by bot id=8127535202
+2025-03-06 00:30:53,142 - root - INFO - Пользователь 2008871219 запросил консультацию.
+2025-03-06 00:30:53,142 - root - ERROR - Ошибка при запросе к OpenAI: module 'openai' has no attribute 'ChatCompletion'
+2025-03-06 00:30:53,142 - root - INFO - OpenAI ответил: Произошла ошибка при обработке запроса. Пожалуйста, попробуйте позже.
+2025-03-06 00:30:53,268 - aiogram.event - INFO - Update id=864039773 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 00:31:17,121 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 00:31:17,377 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 00:31:17,380 - root - INFO - Бот завершает работу...
+2025-03-06 00:35:23,553 - root - INFO - Логирование настроено.
+2025-03-06 00:35:23,554 - root - INFO - Запуск бота...
+2025-03-06 00:35:23,786 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 00:35:23,787 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 00:35:24,230 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 00:35:31,105 - root - INFO - Пользователь 2008871219 запросил консультацию.
+2025-03-06 00:35:31,773 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2025-03-06 00:35:31,776 - root - ERROR - Ошибка при запросе к OpenAI: Error code: 403 - {'error': {'code': 'unsupported_country_region_territory', 'message': 'Country, region, or territory not supported', 'param': None, 'type': 'request_forbidden'}}
+2025-03-06 00:35:31,777 - root - INFO - OpenAI ответил: Произошла ошибка при обработке запроса. Пожалуйста, попробуйте позже.
+2025-03-06 00:35:32,072 - aiogram.event - INFO - Update id=864039774 is handled. Duration 969 ms by bot id=8127535202
+2025-03-06 00:39:13,986 - aiogram.event - INFO - Update id=864039775 is not handled. Duration 78 ms by bot id=8127535202
+2025-03-06 00:39:20,049 - root - INFO - Пользователь 2135123898 запустил бота.
+2025-03-06 00:39:20,383 - aiogram.event - INFO - Update id=864039776 is handled. Duration 329 ms by bot id=8127535202
+2025-03-06 00:39:22,632 - root - INFO - Пользователь 2135123898 начал создание события.
+2025-03-06 00:39:22,920 - aiogram.event - INFO - Update id=864039777 is handled. Duration 280 ms by bot id=8127535202
+2025-03-06 00:39:34,493 - root - INFO - Пользователь 2135123898 ввел название события: Тестовое событие
+2025-03-06 00:39:34,615 - aiogram.event - INFO - Update id=864039778 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 00:39:36,359 - root - INFO - Пользователь 2135123898 выбрал год: 2026
+2025-03-06 00:39:36,455 - aiogram.event - INFO - Update id=864039779 is handled. Duration 109 ms by bot id=8127535202
+2025-03-06 00:39:37,408 - root - INFO - Пользователь 2135123898 выбрал месяц: 5
+2025-03-06 00:39:37,496 - aiogram.event - INFO - Update id=864039780 is handled. Duration 78 ms by bot id=8127535202
+2025-03-06 00:39:39,433 - root - INFO - Пользователь 2135123898 выбрал дату: 2026-05-31
+2025-03-06 00:39:39,510 - aiogram.event - INFO - Update id=864039781 is handled. Duration 79 ms by bot id=8127535202
+2025-03-06 00:39:42,022 - aiogram.event - INFO - Update id=864039782 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 00:39:46,741 - aiogram.event - INFO - Update id=864039783 is handled. Duration 188 ms by bot id=8127535202
+2025-03-06 00:39:51,907 - root - INFO - Пользователь 2135123898 ввел описание события: Описание
+2025-03-06 00:39:51,907 - root - INFO - Событие 'Тестовое событие' создано пользователем 2135123898.
+2025-03-06 00:39:52,087 - root - ERROR - Ошибка при добавлении события в базу данных: connection was closed in the middle of operation
+2025-03-06 00:39:52,216 - root - INFO - Запланировано уведомление для пользователя 2135123898 о событии 'Тестовое событие'.
+2025-03-06 00:39:52,219 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-06 00:39:52,220 - aiogram.event - INFO - Update id=864039784 is handled. Duration 312 ms by bot id=8127535202
+2025-03-06 00:39:55,382 - root - INFO - Пользователь 2135123898 вернулся в меню.
+2025-03-06 00:39:55,482 - aiogram.event - INFO - Update id=864039785 is handled. Duration 92 ms by bot id=8127535202
+2025-03-06 00:39:56,511 - aiogram.event - INFO - Update id=864039786 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 00:39:58,770 - aiogram.event - INFO - Update id=864039787 is not handled. Duration 15 ms by bot id=8127535202
+2025-03-06 00:39:59,906 - root - INFO - Пользователь 2135123898 запросил консультацию.
+2025-03-06 00:40:00,445 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2025-03-06 00:40:00,446 - root - ERROR - Ошибка при запросе к OpenAI: Error code: 403 - {'error': {'code': 'unsupported_country_region_territory', 'message': 'Country, region, or territory not supported', 'param': None, 'type': 'request_forbidden'}}
+2025-03-06 00:40:00,447 - root - INFO - OpenAI ответил: Произошла ошибка при обработке запроса. Пожалуйста, попробуйте позже.
+2025-03-06 00:40:00,525 - aiogram.event - INFO - Update id=864039788 is handled. Duration 625 ms by bot id=8127535202
+2025-03-06 01:10:51,093 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-03-06 01:10:51,093 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-06 01:10:55,515 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 01:10:55,781 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:10:55,783 - root - INFO - Бот завершает работу...
+2025-03-06 01:18:00,752 - root - INFO - Логирование настроено.
+2025-03-06 01:18:00,752 - root - INFO - Запуск бота...
+2025-03-06 01:18:00,978 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 01:18:00,978 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 01:18:01,296 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:18:05,031 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 01:18:05,312 - aiogram.event - INFO - Update id=864039789 is handled. Duration 297 ms by bot id=8127535202
+2025-03-06 01:18:07,042 - root - INFO - Пользователь 2008871219 начал создание события.
+2025-03-06 01:18:07,130 - aiogram.event - INFO - Update id=864039790 is handled. Duration 94 ms by bot id=8127535202
+2025-03-06 01:18:20,059 - root - INFO - Пользователь 2008871219 ввел название события: Собрание профбюро
+2025-03-06 01:18:20,159 - aiogram.event - INFO - Update id=864039791 is handled. Duration 109 ms by bot id=8127535202
+2025-03-06 01:18:21,775 - root - INFO - Пользователь 2008871219 выбрал год: 2025
+2025-03-06 01:18:21,835 - aiogram.event - INFO - Update id=864039792 is handled. Duration 62 ms by bot id=8127535202
+2025-03-06 01:18:23,646 - root - INFO - Пользователь 2008871219 выбрал месяц: 3
+2025-03-06 01:18:23,774 - aiogram.event - INFO - Update id=864039793 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 01:18:28,662 - root - INFO - Пользователь 2008871219 выбрал дату: 2025-03-06
+2025-03-06 01:18:28,763 - aiogram.event - INFO - Update id=864039794 is handled. Duration 94 ms by bot id=8127535202
+2025-03-06 01:18:31,426 - root - INFO - Пользователь 2008871219 выбрал время: 09:00
+2025-03-06 01:18:31,561 - aiogram.event - INFO - Update id=864039795 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 01:18:36,452 - root - INFO - Пользователь 2008871219 ввел описание события: сбор
+2025-03-06 01:18:36,507 - root - INFO - Событие 'Собрание профбюро' создано пользователем 2008871219.
+2025-03-06 01:18:36,615 - root - ERROR - Ошибка при подключении к базе данных: connection was closed in the middle of operation
+2025-03-06 01:18:36,615 - root - ERROR - Ошибка при добавлении события: 'NoneType' object has no attribute 'execute'
+2025-03-06 01:18:36,749 - root - INFO - Запланировано уведомление для пользователя 2008871219 о событии 'Собрание профбюро'.
+2025-03-06 01:18:36,800 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-06 01:18:36,800 - aiogram.event - INFO - Update id=864039796 is handled. Duration 358 ms by bot id=8127535202
+2025-03-06 01:18:40,650 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 01:18:40,733 - aiogram.event - INFO - Update id=864039797 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 01:18:42,445 - aiogram.event - INFO - Update id=864039798 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 01:22:21,937 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 01:22:22,263 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:22:22,265 - root - INFO - Бот завершает работу...
+2025-03-06 01:22:28,344 - root - INFO - Логирование настроено.
+2025-03-06 01:22:28,345 - root - INFO - Запуск бота...
+2025-03-06 01:22:28,629 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 01:22:28,634 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 01:22:29,010 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:22:33,325 - root - INFO - Пользователь 8127535202 запросил свои события.
+2025-03-06 01:22:33,434 - root - ERROR - Ошибка при подключении к базе данных: connection was closed in the middle of operation
+2025-03-06 01:22:33,435 - root - ERROR - Ошибка при получении событий: 'NoneType' object has no attribute 'fetch'
+2025-03-06 01:22:33,837 - aiogram.event - INFO - Update id=864039799 is handled. Duration 515 ms by bot id=8127535202
+2025-03-06 01:25:09,502 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 01:25:09,769 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:25:09,771 - root - INFO - Бот завершает работу...
+2025-03-06 01:25:15,997 - root - INFO - Логирование настроено.
+2025-03-06 01:25:15,997 - root - INFO - Запуск бота...
+2025-03-06 01:25:16,337 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 01:25:16,338 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 01:25:16,647 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:25:26,344 - root - INFO - Пользователь 2008871219 запросил проверку базы данных.
+2025-03-06 01:25:26,464 - root - ERROR - Ошибка при подключении к базе данных: connection was closed in the middle of operation
+2025-03-06 01:25:26,684 - aiogram.event - INFO - Update id=864039800 is handled. Duration 342 ms by bot id=8127535202
+2025-03-06 01:28:06,365 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 01:28:06,635 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:28:06,637 - root - INFO - Бот завершает работу...
+2025-03-06 01:28:12,841 - root - INFO - Логирование настроено.
+2025-03-06 01:28:12,841 - root - INFO - Запуск бота...
+2025-03-06 01:28:13,112 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 01:28:13,112 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 01:28:13,489 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:28:14,436 - root - INFO - Пользователь 2008871219 запросил проверку базы данных.
+2025-03-06 01:28:14,553 - root - ERROR - Ошибка при подключении к базе данных: connection was closed in the middle of operation
+2025-03-06 01:28:14,939 - aiogram.event - INFO - Update id=864039801 is handled. Duration 516 ms by bot id=8127535202
+2025-03-06 01:28:36,968 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 01:28:37,229 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:28:37,232 - root - INFO - Бот завершает работу...
+2025-03-06 01:28:43,721 - root - INFO - Логирование настроено.
+2025-03-06 01:28:43,721 - root - INFO - Запуск бота...
+2025-03-06 01:28:44,115 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 01:28:44,120 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 01:28:44,367 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:28:45,249 - root - INFO - Пользователь 2008871219 запросил проверку базы данных.
+2025-03-06 01:28:45,344 - root - ERROR - Ошибка при подключении к базе данных: connection was closed in the middle of operation
+2025-03-06 01:28:45,544 - aiogram.event - INFO - Update id=864039802 is handled. Duration 296 ms by bot id=8127535202
+2025-03-06 01:47:13,265 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 01:47:13,551 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:47:13,558 - root - INFO - Бот завершает работу...
+2025-03-06 01:47:18,994 - root - INFO - Логирование настроено.
+2025-03-06 01:47:18,994 - root - INFO - Запуск бота...
+2025-03-06 01:47:19,269 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 01:47:19,270 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 01:47:19,785 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:47:45,781 - root - INFO - Пользователь 2008871219 запросил проверку базы данных.
+2025-03-06 01:47:45,897 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 01:47:46,235 - aiogram.event - INFO - Update id=864039803 is handled. Duration 453 ms by bot id=8127535202
+2025-03-06 01:48:17,024 - root - INFO - Пользователь 2008871219 запросил проверку базы данных.
+2025-03-06 01:48:17,135 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 01:48:17,220 - aiogram.event - INFO - Update id=864039804 is handled. Duration 202 ms by bot id=8127535202
+2025-03-06 01:48:30,428 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 01:48:30,506 - aiogram.event - INFO - Update id=864039805 is handled. Duration 79 ms by bot id=8127535202
+2025-03-06 01:48:33,874 - root - INFO - Пользователь 2008871219 начал создание события.
+2025-03-06 01:48:34,013 - aiogram.event - INFO - Update id=864039806 is handled. Duration 140 ms by bot id=8127535202
+2025-03-06 01:48:36,277 - root - INFO - Пользователь 2008871219 ввел название события: jgiubl
+2025-03-06 01:48:36,350 - aiogram.event - INFO - Update id=864039807 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 01:48:37,750 - root - INFO - Пользователь 2008871219 выбрал год: 2025
+2025-03-06 01:48:37,904 - aiogram.event - INFO - Update id=864039808 is handled. Duration 140 ms by bot id=8127535202
+2025-03-06 01:48:39,551 - root - INFO - Пользователь 2008871219 выбрал месяц: 3
+2025-03-06 01:48:39,647 - aiogram.event - INFO - Update id=864039809 is handled. Duration 94 ms by bot id=8127535202
+2025-03-06 01:48:41,800 - root - INFO - Пользователь 2008871219 выбрал дату: 2025-03-06
+2025-03-06 01:48:41,902 - aiogram.event - INFO - Update id=864039810 is handled. Duration 94 ms by bot id=8127535202
+2025-03-06 01:48:43,757 - root - INFO - Пользователь 2008871219 выбрал время: 09:00
+2025-03-06 01:48:43,847 - aiogram.event - INFO - Update id=864039811 is handled. Duration 92 ms by bot id=8127535202
+2025-03-06 01:48:45,805 - root - INFO - Пользователь 2008871219 пропустил описание события.
+2025-03-06 01:48:45,810 - root - INFO - Событие 'jgiubl' создано пользователем 2008871219.
+2025-03-06 01:48:45,918 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 01:48:45,926 - root - ERROR - Ошибка при добавлении события: invalid input for query argument $4: '2025-03-06 09:00' (expected a datetime.date or datetime.datetime instance, got 'str')
+2025-03-06 01:48:45,931 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 01:48:46,099 - root - INFO - Запланировано уведомление для пользователя 2008871219 о событии 'jgiubl'.
+2025-03-06 01:48:46,152 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-06 01:48:46,152 - aiogram.event - INFO - Update id=864039812 is handled. Duration 344 ms by bot id=8127535202
+2025-03-06 01:48:47,899 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 01:48:48,046 - aiogram.event - INFO - Update id=864039813 is handled. Duration 155 ms by bot id=8127535202
+2025-03-06 01:48:49,277 - root - INFO - Пользователь 8127535202 запросил свои события.
+2025-03-06 01:48:49,442 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 01:48:49,447 - root - INFO - Получено 0 событий для пользователя 8127535202.
+2025-03-06 01:48:49,452 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 01:48:49,577 - aiogram.event - INFO - Update id=864039814 is handled. Duration 312 ms by bot id=8127535202
+2025-03-06 01:54:14,615 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 01:54:14,876 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:54:14,879 - root - INFO - Бот завершает работу...
+2025-03-06 01:57:17,529 - root - INFO - Логирование настроено.
+2025-03-06 01:57:17,529 - root - INFO - Запуск бота...
+2025-03-06 01:57:17,900 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 01:57:17,900 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 01:57:18,159 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 01:57:18,759 - root - INFO - Пользователь 2008871219 начал создание события.
+2025-03-06 01:57:18,983 - aiogram.event - INFO - Update id=864039815 is handled. Duration 234 ms by bot id=8127535202
+2025-03-06 01:57:22,542 - root - INFO - Пользователь 2008871219 ввел название события: реалмиот
+2025-03-06 01:57:22,621 - aiogram.event - INFO - Update id=864039816 is handled. Duration 78 ms by bot id=8127535202
+2025-03-06 01:57:24,475 - root - INFO - Пользователь 2008871219 выбрал год: 2025
+2025-03-06 01:57:24,561 - aiogram.event - INFO - Update id=864039817 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 01:57:26,249 - root - INFO - Пользователь 2008871219 выбрал месяц: 3
+2025-03-06 01:57:26,362 - aiogram.event - INFO - Update id=864039818 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 01:57:27,739 - root - INFO - Пользователь 2008871219 выбрал дату: 2025-03-06
+2025-03-06 01:57:27,838 - aiogram.event - INFO - Update id=864039819 is handled. Duration 93 ms by bot id=8127535202
+2025-03-06 01:57:29,075 - root - INFO - Пользователь 2008871219 выбрал время: 09:00
+2025-03-06 01:57:29,181 - aiogram.event - INFO - Update id=864039820 is handled. Duration 108 ms by bot id=8127535202
+2025-03-06 01:57:33,242 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 01:57:33,315 - aiogram.event - INFO - Update id=864039821 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 01:57:35,255 - root - INFO - Пользователь 8127535202 запросил свои события.
+2025-03-06 01:57:35,388 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 01:57:35,389 - aiogram.event - INFO - Update id=864039822 is not handled. Duration 125 ms by bot id=8127535202
+2025-03-06 01:57:35,389 - aiogram.event - ERROR - Cause exception while process update id=864039822 by bot id=8127535202
+AttributeError: 'Database' object has no attribute 'get_user_events'
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\my_events.py", line 25, in my_events
+    events = await db.get_user_events(message.from_user.id)
+                   ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Database' object has no attribute 'get_user_events'
+2025-03-06 02:00:20,370 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:00:20,631 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:00:20,632 - root - INFO - Бот завершает работу...
+2025-03-06 02:00:25,767 - root - INFO - Логирование настроено.
+2025-03-06 02:00:25,768 - root - INFO - Запуск бота...
+2025-03-06 02:00:25,959 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:00:25,959 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:00:26,148 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:00:27,152 - root - INFO - Пользователь 2008871219 начал создание события.
+2025-03-06 02:00:27,372 - aiogram.event - INFO - Update id=864039823 is handled. Duration 219 ms by bot id=8127535202
+2025-03-06 02:00:28,673 - root - INFO - Пользователь 2008871219 ввел название события: ьрпомлои
+2025-03-06 02:00:28,745 - aiogram.event - INFO - Update id=864039824 is handled. Duration 63 ms by bot id=8127535202
+2025-03-06 02:00:30,691 - root - INFO - Пользователь 2008871219 выбрал год: 2025
+2025-03-06 02:00:30,771 - aiogram.event - INFO - Update id=864039825 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 02:00:31,896 - root - INFO - Пользователь 2008871219 выбрал месяц: 3
+2025-03-06 02:00:31,996 - aiogram.event - INFO - Update id=864039826 is handled. Duration 94 ms by bot id=8127535202
+2025-03-06 02:00:33,813 - root - INFO - Пользователь 2008871219 выбрал дату: 2025-03-06
+2025-03-06 02:00:33,887 - aiogram.event - INFO - Update id=864039827 is handled. Duration 79 ms by bot id=8127535202
+2025-03-06 02:00:35,267 - root - INFO - Пользователь 2008871219 выбрал время: 09:00
+2025-03-06 02:00:35,371 - aiogram.event - INFO - Update id=864039828 is handled. Duration 94 ms by bot id=8127535202
+2025-03-06 02:00:39,349 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 02:00:39,420 - aiogram.event - INFO - Update id=864039829 is handled. Duration 62 ms by bot id=8127535202
+2025-03-06 02:00:42,453 - aiogram.event - INFO - Update id=864039830 is not handled. Duration 15 ms by bot id=8127535202
+2025-03-06 02:02:55,663 - root - INFO - Пользователь 2008871219 ввел описание события: /my_events
+2025-03-06 02:02:55,666 - root - INFO - Событие 'ьрпомлои' создано пользователем 2008871219.
+2025-03-06 02:02:55,728 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:02:55,738 - root - INFO - Событие 'ьрпомлои' добавлено в базу данных.
+2025-03-06 02:02:55,741 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:02:55,822 - root - INFO - Запланировано уведомление для пользователя 2008871219 о событии 'ьрпомлои'.
+2025-03-06 02:02:55,824 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-06 02:02:55,824 - aiogram.event - INFO - Update id=864039831 is handled. Duration 156 ms by bot id=8127535202
+2025-03-06 02:03:00,632 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 02:03:00,754 - aiogram.event - INFO - Update id=864039832 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 02:04:56,920 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:04:57,175 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:04:57,175 - root - INFO - Бот завершает работу...
+2025-03-06 02:05:02,198 - root - INFO - Логирование настроено.
+2025-03-06 02:05:02,198 - root - INFO - Запуск бота...
+2025-03-06 02:05:02,399 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:05:02,400 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:05:02,571 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:05:13,190 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-06 02:05:13,262 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:05:13,267 - root - INFO - Получено 1 событий для пользователя 2008871219.
+2025-03-06 02:05:13,270 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:05:13,453 - aiogram.event - INFO - Update id=864039833 is handled. Duration 265 ms by bot id=8127535202
+2025-03-06 02:05:17,002 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-06 02:05:17,165 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:05:17,168 - root - INFO - Получено 1 событий для пользователя 2008871219.
+2025-03-06 02:05:17,171 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:05:17,218 - aiogram.event - INFO - Update id=864039834 is handled. Duration 217 ms by bot id=8127535202
+2025-03-06 02:05:22,030 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-06 02:05:22,092 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:05:22,095 - root - INFO - Получено 1 событий для пользователя 2008871219.
+2025-03-06 02:05:22,098 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:05:22,167 - aiogram.event - INFO - Update id=864039835 is handled. Duration 140 ms by bot id=8127535202
+2025-03-06 02:06:19,103 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:06:19,355 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:06:19,357 - root - INFO - Бот завершает работу...
+2025-03-06 02:06:23,271 - root - INFO - Логирование настроено.
+2025-03-06 02:06:23,271 - root - INFO - Запуск бота...
+2025-03-06 02:06:23,450 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:06:23,450 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:06:23,711 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:06:25,146 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-06 02:06:25,214 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:06:25,222 - root - INFO - Получено 1 событий для пользователя 2008871219.
+2025-03-06 02:06:25,224 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:06:25,433 - aiogram.event - INFO - Update id=864039836 is handled. Duration 280 ms by bot id=8127535202
+2025-03-06 02:06:28,210 - aiogram.event - INFO - Update id=864039837 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 02:06:59,959 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:07:00,211 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:07:00,213 - root - INFO - Бот завершает работу...
+2025-03-06 02:07:03,877 - root - INFO - Логирование настроено.
+2025-03-06 02:07:03,879 - root - INFO - Запуск бота...
+2025-03-06 02:07:04,060 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:07:04,061 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:07:04,257 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:07:11,028 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 02:07:11,209 - aiogram.event - INFO - Update id=864039838 is handled. Duration 187 ms by bot id=8127535202
+2025-03-06 02:07:12,440 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-06 02:07:12,514 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:07:12,517 - root - INFO - Получено 1 событий для пользователя 2008871219.
+2025-03-06 02:07:12,522 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:07:12,593 - aiogram.event - INFO - Update id=864039839 is handled. Duration 155 ms by bot id=8127535202
+2025-03-06 02:07:25,952 - root - INFO - Пользователь 2008871219 начал создание события.
+2025-03-06 02:07:26,032 - aiogram.event - INFO - Update id=864039840 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 02:07:37,676 - root - INFO - Пользователь 2008871219 ввел название события: Прогулка по улице
+2025-03-06 02:07:37,752 - aiogram.event - INFO - Update id=864039841 is handled. Duration 79 ms by bot id=8127535202
+2025-03-06 02:07:39,877 - root - INFO - Пользователь 2008871219 выбрал год: 2025
+2025-03-06 02:07:39,973 - aiogram.event - INFO - Update id=864039842 is handled. Duration 92 ms by bot id=8127535202
+2025-03-06 02:07:41,221 - root - INFO - Пользователь 2008871219 выбрал месяц: 3
+2025-03-06 02:07:41,303 - aiogram.event - INFO - Update id=864039843 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 02:07:43,733 - root - INFO - Пользователь 2008871219 выбрал дату: 2025-03-06
+2025-03-06 02:07:43,806 - aiogram.event - INFO - Update id=864039844 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 02:07:45,899 - aiogram.event - INFO - Update id=864039845 is handled. Duration 94 ms by bot id=8127535202
+2025-03-06 02:07:53,797 - aiogram.event - INFO - Update id=864039846 is handled. Duration 108 ms by bot id=8127535202
+2025-03-06 02:08:11,707 - root - INFO - Пользователь 2008871219 ввел описание события: хочу погулять ночью один
+2025-03-06 02:08:11,708 - root - INFO - Событие 'Прогулка по улице' создано пользователем 2008871219.
+2025-03-06 02:08:11,773 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:08:11,781 - root - INFO - Событие 'Прогулка по улице' добавлено в базу данных.
+2025-03-06 02:08:11,782 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:08:11,859 - root - INFO - Запланировано уведомление для пользователя 2008871219 о событии 'Прогулка по улице'.
+2025-03-06 02:08:11,862 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-06 02:08:11,862 - aiogram.event - INFO - Update id=864039847 is handled. Duration 156 ms by bot id=8127535202
+2025-03-06 02:08:13,519 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 02:08:13,605 - aiogram.event - INFO - Update id=864039848 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 02:08:14,826 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-06 02:08:14,997 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:08:15,001 - root - INFO - Получено 2 событий для пользователя 2008871219.
+2025-03-06 02:08:15,003 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:08:15,102 - aiogram.event - INFO - Update id=864039849 is handled. Duration 280 ms by bot id=8127535202
+2025-03-06 02:10:01,662 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:10:01,933 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:10:01,935 - root - INFO - Бот завершает работу...
+2025-03-06 02:10:05,930 - root - INFO - Логирование настроено.
+2025-03-06 02:10:05,930 - root - INFO - Запуск бота...
+2025-03-06 02:10:06,135 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:10:06,139 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:10:06,283 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:10:11,210 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 02:10:11,391 - aiogram.event - INFO - Update id=864039850 is handled. Duration 187 ms by bot id=8127535202
+2025-03-06 02:10:12,552 - aiogram.event - INFO - Update id=864039851 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 02:10:43,790 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:10:44,047 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:10:44,049 - root - INFO - Бот завершает работу...
+2025-03-06 02:10:52,772 - root - INFO - Логирование настроено.
+2025-03-06 02:10:52,772 - root - INFO - Запуск бота...
+2025-03-06 02:10:52,952 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:10:52,952 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:10:53,161 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:11:17,868 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-06 02:11:17,946 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:11:17,949 - root - INFO - Получено 2 событий для пользователя 2008871219.
+2025-03-06 02:11:17,952 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:11:18,150 - aiogram.event - INFO - Update id=864039852 is handled. Duration 280 ms by bot id=8127535202
+2025-03-06 02:14:57,048 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:14:57,308 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:14:57,308 - root - INFO - Бот завершает работу...
+2025-03-06 02:15:01,249 - root - INFO - Логирование настроено.
+2025-03-06 02:15:01,249 - root - INFO - Запуск бота...
+2025-03-06 02:15:01,438 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:15:01,438 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:15:01,618 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:15:10,071 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 02:15:10,312 - aiogram.event - INFO - Update id=864039853 is handled. Duration 250 ms by bot id=8127535202
+2025-03-06 02:15:11,993 - root - INFO - Пользователь 2008871219 начал создание события.
+2025-03-06 02:15:12,090 - aiogram.event - INFO - Update id=864039854 is handled. Duration 93 ms by bot id=8127535202
+2025-03-06 02:15:18,519 - root - INFO - Пользователь 2008871219 ввел название события: попить воды
+2025-03-06 02:15:18,630 - aiogram.event - INFO - Update id=864039855 is handled. Duration 109 ms by bot id=8127535202
+2025-03-06 02:15:20,083 - root - INFO - Пользователь 2008871219 выбрал год: 2025
+2025-03-06 02:15:20,160 - aiogram.event - INFO - Update id=864039856 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 02:15:23,854 - root - INFO - Пользователь 2008871219 выбрал месяц: 3
+2025-03-06 02:15:23,941 - aiogram.event - INFO - Update id=864039857 is handled. Duration 94 ms by bot id=8127535202
+2025-03-06 02:15:25,610 - root - INFO - Пользователь 2008871219 выбрал дату: 2025-03-06
+2025-03-06 02:15:25,700 - aiogram.event - INFO - Update id=864039858 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 02:15:28,501 - aiogram.event - INFO - Update id=864039859 is handled. Duration 94 ms by bot id=8127535202
+2025-03-06 02:15:42,498 - aiogram.event - INFO - Update id=864039860 is handled. Duration 78 ms by bot id=8127535202
+2025-03-06 02:15:58,866 - root - INFO - Пользователь 2008871219 ввел описание события: СХЛДИ ПОПЕЙ ВОДЫ!
+2025-03-06 02:15:58,867 - root - INFO - Событие 'попить воды' создано пользователем 2008871219.
+2025-03-06 02:15:58,930 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:15:58,933 - root - INFO - Событие 'попить воды' добавлено в базу данных.
+2025-03-06 02:15:58,936 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:15:59,018 - aiogram.event - INFO - Update id=864039861 is not handled. Duration 155 ms by bot id=8127535202
+2025-03-06 02:15:59,019 - aiogram.event - ERROR - Cause exception while process update id=864039861 by bot id=8127535202
+TypeError: schedule_notification() missing 1 required positional argument: 'reminder_offset'
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\create_event.py", line 122, in process_event_description
+    await save_event(message, state)
+  File "D:\BraiLook\AI_Assist\handlers\create_event.py", line 148, in save_event
+    schedule_notification(message.from_user.id, event_datetime - timedelta(hours=1), event_name)
+TypeError: schedule_notification() missing 1 required positional argument: 'reminder_offset'
+2025-03-06 02:16:02,297 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 02:16:02,371 - aiogram.event - INFO - Update id=864039862 is handled. Duration 63 ms by bot id=8127535202
+2025-03-06 02:19:02,196 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:19:02,445 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:19:02,446 - root - INFO - Бот завершает работу...
+2025-03-06 02:19:06,212 - root - INFO - Логирование настроено.
+2025-03-06 02:19:06,213 - root - INFO - Запуск бота...
+2025-03-06 02:19:06,392 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:19:06,392 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:19:06,572 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:19:08,156 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-06 02:19:08,226 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:19:08,229 - root - INFO - Получено 3 событий для пользователя 2008871219.
+2025-03-06 02:19:08,231 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:19:08,447 - aiogram.event - INFO - Update id=864039863 is handled. Duration 281 ms by bot id=8127535202
+2025-03-06 02:21:07,364 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 121] Превышен таймаут семафора
+2025-03-06 02:21:07,364 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-06 02:22:07,467 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Подключение к сети было разорвано локальной системой]
+2025-03-06 02:22:07,468 - aiogram.dispatcher - WARNING - Sleep for 1.436303 seconds and try again... (tryings = 1, bot id = 8127535202)
+2025-03-06 02:22:16,542 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:22:16,797 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:22:16,802 - root - INFO - Бот завершает работу...
+2025-03-06 02:22:22,663 - root - INFO - Логирование настроено.
+2025-03-06 02:22:22,663 - root - INFO - Запуск бота...
+2025-03-06 02:22:22,886 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:22:22,886 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:22:23,569 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:22:23,701 - root - INFO - Пользователь 705164846 запустил бота.
+2025-03-06 02:22:24,055 - aiogram.event - INFO - Update id=864039864 is handled. Duration 375 ms by bot id=8127535202
+2025-03-06 02:22:28,572 - root - INFO - Пользователь 705164846 начал создание события.
+2025-03-06 02:22:28,724 - aiogram.event - INFO - Update id=864039865 is handled. Duration 155 ms by bot id=8127535202
+2025-03-06 02:22:33,829 - root - INFO - Пользователь 705164846 ввел название события: Ромальт лох
+2025-03-06 02:22:33,926 - aiogram.event - INFO - Update id=864039866 is handled. Duration 155 ms by bot id=8127535202
+2025-03-06 02:22:40,660 - root - INFO - Пользователь 705164846 выбрал год: 2025
+2025-03-06 02:22:40,830 - aiogram.event - INFO - Update id=864039867 is handled. Duration 172 ms by bot id=8127535202
+2025-03-06 02:22:43,800 - root - INFO - Пользователь 705164846 выбрал месяц: 3
+2025-03-06 02:22:43,923 - aiogram.event - INFO - Update id=864039868 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 02:22:47,087 - root - INFO - Пользователь 705164846 выбрал дату: 2025-03-21
+2025-03-06 02:22:47,206 - aiogram.event - INFO - Update id=864039869 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 02:22:49,502 - root - INFO - Пользователь 705164846 выбрал время: 12:00
+2025-03-06 02:22:49,934 - aiogram.event - INFO - Update id=864039870 is handled. Duration 420 ms by bot id=8127535202
+2025-03-06 02:22:58,023 - root - INFO - Пользователь 705164846 ввел описание события: Ромальт лошара
+2025-03-06 02:22:58,093 - root - INFO - Событие 'Ромальт лох' создано пользователем 705164846.
+2025-03-06 02:22:58,222 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:22:58,232 - root - INFO - Событие 'Ромальт лох' добавлено в базу данных.
+2025-03-06 02:22:58,237 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:22:58,376 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-06 02:22:58,376 - root - INFO - Запланировано уведомление за сутки для пользователя 705164846 о событии 'Ромальт лох'.
+2025-03-06 02:22:58,378 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-06 02:22:58,378 - root - INFO - Запланировано уведомление за час для пользователя 705164846 о событии 'Ромальт лох'.
+2025-03-06 02:22:58,378 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-06 02:22:58,378 - root - INFO - Запланировано уведомление за пять минут для пользователя 705164846 о событии 'Ромальт лох'.
+2025-03-06 02:22:58,379 - aiogram.event - INFO - Update id=864039871 is handled. Duration 359 ms by bot id=8127535202
+2025-03-06 02:23:01,107 - root - INFO - Пользователь 705164846 вернулся в меню.
+2025-03-06 02:23:01,204 - aiogram.event - INFO - Update id=864039872 is handled. Duration 109 ms by bot id=8127535202
+2025-03-06 02:23:03,539 - root - INFO - Пользователь 705164846 запросил свои события.
+2025-03-06 02:23:03,643 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:23:03,710 - root - INFO - Получено 1 событий для пользователя 705164846.
+2025-03-06 02:23:03,715 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:23:03,821 - aiogram.event - INFO - Update id=864039873 is handled. Duration 281 ms by bot id=8127535202
+2025-03-06 02:25:14,563 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-03-06 02:25:14,564 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-06 02:25:26,017 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8127535202)
+2025-03-06 02:25:39,926 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 02:25:40,147 - aiogram.event - INFO - Update id=864039874 is handled. Duration 219 ms by bot id=8127535202
+2025-03-06 02:25:41,552 - aiogram.event - INFO - Update id=864039875 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 02:26:11,122 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:26:11,378 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:26:11,381 - root - INFO - Бот завершает работу...
+2025-03-06 02:26:18,023 - root - INFO - Логирование настроено.
+2025-03-06 02:26:18,023 - root - INFO - Запуск бота...
+2025-03-06 02:26:18,289 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:26:18,289 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:26:18,635 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:26:20,520 - aiogram.event - INFO - Update id=864039876 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 02:27:28,483 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:27:28,736 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:27:28,736 - root - INFO - Бот завершает работу...
+2025-03-06 02:27:34,914 - root - INFO - Логирование настроено.
+2025-03-06 02:27:34,914 - root - INFO - Запуск бота...
+2025-03-06 02:27:35,089 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:27:35,089 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:27:47,139 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:27:54,756 - root - INFO - Логирование настроено.
+2025-03-06 02:27:54,757 - root - INFO - Запуск бота...
+2025-03-06 02:27:54,956 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:27:54,957 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:27:55,143 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:27:55,210 - aiogram.event - INFO - Update id=864039877 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 02:27:58,445 - aiogram.event - INFO - Update id=864039878 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 02:30:35,934 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:30:36,197 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:30:36,197 - root - INFO - Бот завершает работу...
+2025-03-06 02:30:40,865 - root - INFO - Логирование настроено.
+2025-03-06 02:30:40,865 - root - INFO - Запуск бота...
+2025-03-06 02:30:41,055 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:30:41,055 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:30:41,251 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:30:47,311 - root - INFO - Пользователь 2008871219 запросил консультацию.
+2025-03-06 02:30:47,386 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:30:47,394 - root - INFO - Получено 3 событий для пользователя 2008871219.
+2025-03-06 02:30:47,397 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:30:47,855 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2025-03-06 02:30:47,857 - root - ERROR - Ошибка при запросе к OpenAI: Error code: 403 - {'error': {'code': 'unsupported_country_region_territory', 'message': 'Country, region, or territory not supported', 'param': None, 'type': 'request_forbidden'}}
+2025-03-06 02:30:48,053 - aiogram.event - INFO - Update id=864039879 is handled. Duration 750 ms by bot id=8127535202
+2025-03-06 02:38:50,547 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 02:38:50,822 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:38:50,824 - root - INFO - Бот завершает работу...
+2025-03-06 02:52:31,086 - root - INFO - Логирование настроено.
+2025-03-06 02:52:31,087 - root - INFO - Запуск бота...
+2025-03-06 02:52:31,291 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 02:52:31,291 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 02:52:31,482 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 02:52:40,709 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-06 02:52:40,784 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:52:40,792 - root - INFO - Получено 3 событий для пользователя 2008871219.
+2025-03-06 02:52:40,795 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:52:41,044 - aiogram.event - INFO - Update id=864039880 is handled. Duration 327 ms by bot id=8127535202
+2025-03-06 02:52:51,406 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 02:52:51,476 - aiogram.event - INFO - Update id=864039881 is handled. Duration 62 ms by bot id=8127535202
+2025-03-06 02:52:59,709 - aiogram.event - INFO - Update id=864039882 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 02:53:15,299 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 02:53:15,307 - root - INFO - Пользователь 2008871219 зарегистрирован.
+2025-03-06 02:53:15,311 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 02:53:15,378 - aiogram.event - INFO - Update id=864039883 is handled. Duration 140 ms by bot id=8127535202
+2025-03-06 03:01:01,483 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:01:01,735 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:01:01,735 - root - INFO - Бот завершает работу...
+2025-03-06 03:01:50,783 - root - INFO - Логирование настроено.
+2025-03-06 03:01:50,784 - root - INFO - Запуск бота...
+2025-03-06 03:01:51,027 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:01:51,028 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:01:51,188 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:01:57,754 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 03:01:57,924 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:01:57,930 - aiogram.event - INFO - Update id=864039884 is not handled. Duration 170 ms by bot id=8127535202
+2025-03-06 03:01:57,930 - aiogram.event - ERROR - Cause exception while process update id=864039884 by bot id=8127535202
+AttributeError: 'Database' object has no attribute 'get_user_info'
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\start.py", line 34, in start
+    user_info = await db.get_user_info(user_id)
+                      ^^^^^^^^^^^^^^^^
+AttributeError: 'Database' object has no attribute 'get_user_info'
+2025-03-06 03:05:38,910 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:05:39,173 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:05:39,174 - root - INFO - Бот завершает работу...
+2025-03-06 03:06:18,043 - root - INFO - Логирование настроено.
+2025-03-06 03:06:18,044 - root - INFO - Запуск бота...
+2025-03-06 03:06:18,224 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:06:18,225 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:06:18,361 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:06:25,213 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 03:06:25,292 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:06:25,482 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:06:25,482 - aiogram.event - INFO - Update id=864039885 is handled. Duration 265 ms by bot id=8127535202
+2025-03-06 03:06:38,582 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:06:38,844 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:06:38,847 - root - INFO - Бот завершает работу...
+2025-03-06 03:10:51,792 - root - INFO - Логирование настроено.
+2025-03-06 03:10:51,798 - root - INFO - Запуск бота...
+2025-03-06 03:10:51,973 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:10:51,973 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:10:52,162 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:10:55,104 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 03:10:55,175 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:10:55,401 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:10:55,401 - aiogram.event - INFO - Update id=864039886 is handled. Duration 297 ms by bot id=8127535202
+2025-03-06 03:12:03,727 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:12:03,976 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:12:03,978 - root - INFO - Бот завершает работу...
+2025-03-06 03:12:07,971 - root - INFO - Логирование настроено.
+2025-03-06 03:12:07,971 - root - INFO - Запуск бота...
+2025-03-06 03:12:08,153 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:12:08,153 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:12:08,326 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:12:09,857 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 03:12:09,946 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:12:10,168 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:12:10,168 - aiogram.event - INFO - Update id=864039887 is handled. Duration 312 ms by bot id=8127535202
+2025-03-06 03:12:13,020 - aiogram.event - INFO - Update id=864039888 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 03:13:06,814 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:13:07,088 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:13:07,090 - root - INFO - Бот завершает работу...
+2025-03-06 03:13:12,070 - root - INFO - Логирование настроено.
+2025-03-06 03:13:12,071 - root - INFO - Запуск бота...
+2025-03-06 03:13:12,254 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:13:12,255 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:13:12,437 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:13:13,150 - aiogram.event - INFO - Update id=864039889 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 03:13:35,413 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:13:35,672 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:13:35,674 - root - INFO - Бот завершает работу...
+2025-03-06 03:13:39,867 - root - INFO - Логирование настроено.
+2025-03-06 03:13:39,867 - root - INFO - Запуск бота...
+2025-03-06 03:13:40,046 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:13:40,046 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:13:40,206 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:13:41,489 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:13:41,494 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:13:41,641 - aiogram.event - INFO - Update id=864039890 is handled. Duration 219 ms by bot id=8127535202
+2025-03-06 03:13:44,979 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 03:13:45,045 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:13:45,112 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:13:45,112 - aiogram.event - INFO - Update id=864039891 is handled. Duration 141 ms by bot id=8127535202
+2025-03-06 03:13:46,525 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:13:46,530 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:13:46,582 - aiogram.event - INFO - Update id=864039892 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 03:14:26,480 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:14:26,640 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2685)
+2025-03-06 03:14:26,641 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-06 03:14:26,722 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:14:26,724 - root - INFO - Бот завершает работу...
+2025-03-06 03:14:30,908 - root - INFO - Логирование настроено.
+2025-03-06 03:14:30,909 - root - INFO - Запуск бота...
+2025-03-06 03:14:31,126 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:14:31,126 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:14:31,308 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:14:35,766 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:14:35,774 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:14:35,970 - aiogram.event - INFO - Update id=864039893 is handled. Duration 265 ms by bot id=8127535202
+2025-03-06 03:14:38,391 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 03:14:38,459 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:14:38,581 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:14:38,581 - aiogram.event - INFO - Update id=864039894 is handled. Duration 187 ms by bot id=8127535202
+2025-03-06 03:19:06,812 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:19:07,070 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:19:07,070 - root - INFO - Бот завершает работу...
+2025-03-06 03:19:11,090 - root - INFO - Логирование настроено.
+2025-03-06 03:19:11,090 - root - INFO - Запуск бота...
+2025-03-06 03:19:11,307 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:19:11,307 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:19:11,490 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:19:14,188 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:19:14,193 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:19:14,372 - aiogram.event - INFO - Update id=864039895 is handled. Duration 250 ms by bot id=8127535202
+2025-03-06 03:19:54,672 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:19:54,933 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:19:54,935 - root - INFO - Бот завершает работу...
+2025-03-06 03:19:58,705 - root - INFO - Логирование настроено.
+2025-03-06 03:19:58,705 - root - INFO - Запуск бота...
+2025-03-06 03:19:58,887 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:19:58,888 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:19:59,074 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:20:02,895 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:20:02,900 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:20:03,123 - aiogram.event - INFO - Update id=864039896 is handled. Duration 281 ms by bot id=8127535202
+2025-03-06 03:20:55,439 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:20:55,694 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:20:55,694 - root - INFO - Бот завершает работу...
+2025-03-06 03:20:59,946 - root - INFO - Логирование настроено.
+2025-03-06 03:20:59,946 - root - INFO - Запуск бота...
+2025-03-06 03:21:00,119 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:21:00,119 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:21:00,278 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:21:07,274 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 03:21:07,430 - aiogram.event - INFO - Update id=864039897 is handled. Duration 155 ms by bot id=8127535202
+2025-03-06 03:21:08,759 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:21:08,766 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:21:08,878 - aiogram.event - INFO - Update id=864039898 is handled. Duration 187 ms by bot id=8127535202
+2025-03-06 03:21:12,334 - aiogram.event - INFO - Update id=864039899 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 03:21:15,247 - aiogram.event - INFO - Update id=864039900 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 03:26:04,177 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:26:04,436 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:26:04,439 - root - INFO - Бот завершает работу...
+2025-03-06 03:26:08,336 - root - INFO - Логирование настроено.
+2025-03-06 03:26:08,336 - root - INFO - Запуск бота...
+2025-03-06 03:26:08,531 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:26:08,531 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:26:08,689 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:26:17,304 - aiogram.event - INFO - Update id=864039901 is handled. Duration 155 ms by bot id=8127535202
+2025-03-06 03:26:21,147 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:26:21,154 - root - INFO - Возраст пользователя 2008871219 обновлен.
+2025-03-06 03:26:21,157 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:26:21,216 - aiogram.event - INFO - Update id=864039902 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 03:26:39,394 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-06 03:26:39,473 - aiogram.event - INFO - Update id=864039903 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 03:26:42,569 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:26:42,574 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:26:42,749 - aiogram.event - INFO - Update id=864039904 is handled. Duration 250 ms by bot id=8127535202
+2025-03-06 03:26:50,703 - aiogram.event - INFO - Update id=864039905 is not handled. Duration 15 ms by bot id=8127535202
+2025-03-06 03:31:57,282 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:31:57,546 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:31:57,548 - root - INFO - Бот завершает работу...
+2025-03-06 03:32:01,727 - root - INFO - Логирование настроено.
+2025-03-06 03:32:01,727 - root - INFO - Запуск бота...
+2025-03-06 03:32:01,908 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:32:01,909 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:32:02,077 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:32:03,288 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:32:03,428 - aiogram.event - INFO - Update id=864039906 is not handled. Duration 140 ms by bot id=8127535202
+2025-03-06 03:32:03,428 - aiogram.event - ERROR - Cause exception while process update id=864039906 by bot id=8127535202
+TypeError: Message.answer() missing 1 required positional argument: 'text'
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\start.py", line 123, in return_to_menu
+    await callback.message.answer(
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Message.answer() missing 1 required positional argument: 'text'
+2025-03-06 03:32:36,260 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:32:36,516 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:32:36,517 - root - INFO - Бот завершает работу...
+2025-03-06 03:32:57,663 - root - INFO - Логирование настроено.
+2025-03-06 03:32:57,663 - root - INFO - Запуск бота...
+2025-03-06 03:32:57,847 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:32:57,847 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:32:58,014 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:33:00,961 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:33:01,214 - aiogram.event - INFO - Update id=864039907 is handled. Duration 250 ms by bot id=8127535202
+2025-03-06 03:33:33,348 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:33:33,602 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:33:33,604 - root - INFO - Бот завершает работу...
+2025-03-06 03:33:38,778 - root - INFO - Логирование настроено.
+2025-03-06 03:33:38,778 - root - INFO - Запуск бота...
+2025-03-06 03:33:39,009 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:33:39,010 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:33:39,146 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:33:43,496 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:33:43,504 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:33:44,397 - aiogram.event - INFO - Update id=864039908 is handled. Duration 969 ms by bot id=8127535202
+2025-03-06 03:33:46,779 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:33:46,973 - aiogram.event - INFO - Update id=864039909 is handled. Duration 202 ms by bot id=8127535202
+2025-03-06 03:34:56,103 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:34:56,356 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:34:56,357 - root - INFO - Бот завершает работу...
+2025-03-06 03:35:00,840 - root - INFO - Логирование настроено.
+2025-03-06 03:35:00,840 - root - INFO - Запуск бота...
+2025-03-06 03:35:01,040 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:35:01,042 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:35:01,215 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:36:01,084 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 03:36:01,253 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:36:01,467 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:36:01,467 - aiogram.event - INFO - Update id=864039910 is handled. Duration 375 ms by bot id=8127535202
+2025-03-06 03:36:04,787 - aiogram.event - INFO - Update id=864039911 is handled. Duration 77 ms by bot id=8127535202
+2025-03-06 03:36:17,017 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:36:17,023 - root - INFO - Пользователь 2008871219 зарегистрирован.
+2025-03-06 03:36:17,026 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:36:17,104 - aiogram.event - INFO - Update id=864039912 is handled. Duration 155 ms by bot id=8127535202
+2025-03-06 03:36:21,608 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:36:21,612 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:36:21,781 - aiogram.event - INFO - Update id=864039913 is handled. Duration 250 ms by bot id=8127535202
+2025-03-06 03:37:00,775 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:37:01,027 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:37:01,028 - root - INFO - Бот завершает работу...
+2025-03-06 03:37:04,814 - root - INFO - Логирование настроено.
+2025-03-06 03:37:04,814 - root - INFO - Запуск бота...
+2025-03-06 03:37:05,004 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:37:05,005 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:37:05,202 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:37:08,003 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:37:08,369 - aiogram.event - INFO - Update id=864039914 is handled. Duration 359 ms by bot id=8127535202
+2025-03-06 03:37:10,212 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:37:10,216 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:37:10,379 - aiogram.event - INFO - Update id=864039915 is handled. Duration 234 ms by bot id=8127535202
+2025-03-06 03:37:35,649 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:37:35,911 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:37:35,912 - root - INFO - Бот завершает работу...
+2025-03-06 03:37:39,787 - root - INFO - Логирование настроено.
+2025-03-06 03:37:39,787 - root - INFO - Запуск бота...
+2025-03-06 03:37:39,974 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:37:39,974 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:37:40,137 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:37:41,905 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:37:42,145 - aiogram.event - INFO - Update id=864039916 is handled. Duration 250 ms by bot id=8127535202
+2025-03-06 03:37:43,295 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:37:43,300 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:37:43,434 - aiogram.event - INFO - Update id=864039917 is not handled. Duration 202 ms by bot id=8127535202
+2025-03-06 03:37:43,435 - aiogram.event - ERROR - Cause exception while process update id=864039917 by bot id=8127535202
+TelegramBadRequest: Telegram server says - Bad Request: there is no caption in the message to edit
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\start.py", line 115, in profile
+    await callback.message.edit_caption(profile_message, reply_markup=create_profile_menu_keyboard())
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\bot.py", line 498, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 185, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: there is no caption in the message to edit
+2025-03-06 03:38:01,381 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:38:01,635 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:38:01,636 - root - INFO - Бот завершает работу...
+2025-03-06 03:38:05,782 - root - INFO - Логирование настроено.
+2025-03-06 03:38:05,784 - root - INFO - Запуск бота...
+2025-03-06 03:38:05,973 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:38:05,974 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:38:06,155 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:38:11,299 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:38:11,303 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:38:11,518 - aiogram.event - INFO - Update id=864039918 is handled. Duration 297 ms by bot id=8127535202
+2025-03-06 03:38:15,454 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:38:15,567 - aiogram.event - INFO - Update id=864039919 is handled. Duration 109 ms by bot id=8127535202
+2025-03-06 03:38:17,214 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:38:17,219 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:38:17,334 - aiogram.event - INFO - Update id=864039920 is handled. Duration 187 ms by bot id=8127535202
+2025-03-06 03:38:18,597 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:38:18,749 - aiogram.event - INFO - Update id=864039921 is handled. Duration 157 ms by bot id=8127535202
+2025-03-06 03:38:28,284 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 03:38:28,349 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:38:28,437 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:38:28,437 - aiogram.event - INFO - Update id=864039922 is handled. Duration 156 ms by bot id=8127535202
+2025-03-06 03:38:30,786 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:38:30,791 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:38:30,936 - aiogram.event - INFO - Update id=864039923 is handled. Duration 202 ms by bot id=8127535202
+2025-03-06 03:38:34,515 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:38:35,140 - aiogram.event - INFO - Update id=864039924 is handled. Duration 640 ms by bot id=8127535202
+2025-03-06 03:38:37,151 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:38:37,155 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:38:37,272 - aiogram.event - INFO - Update id=864039925 is handled. Duration 187 ms by bot id=8127535202
+2025-03-06 03:38:38,544 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:38:38,640 - aiogram.event - INFO - Update id=864039926 is handled. Duration 109 ms by bot id=8127535202
+2025-03-06 03:38:39,669 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:38:39,674 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:38:39,815 - aiogram.event - INFO - Update id=864039927 is handled. Duration 202 ms by bot id=8127535202
+2025-03-06 03:38:40,598 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:38:40,717 - aiogram.event - INFO - Update id=864039928 is handled. Duration 109 ms by bot id=8127535202
+2025-03-06 03:39:56,144 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:39:56,403 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:39:56,404 - root - INFO - Бот завершает работу...
+2025-03-06 03:40:00,085 - root - INFO - Логирование настроено.
+2025-03-06 03:40:00,085 - root - INFO - Запуск бота...
+2025-03-06 03:40:00,282 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:40:00,283 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:40:00,410 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:40:01,818 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:40:01,824 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:40:02,055 - aiogram.event - INFO - Update id=864039929 is handled. Duration 295 ms by bot id=8127535202
+2025-03-06 03:40:03,945 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:40:04,038 - aiogram.event - INFO - Update id=864039930 is handled. Duration 93 ms by bot id=8127535202
+2025-03-06 03:40:06,559 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:40:06,563 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:40:06,833 - aiogram.event - INFO - Update id=864039931 is handled. Duration 452 ms by bot id=8127535202
+2025-03-06 03:40:11,038 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:40:11,243 - aiogram.event - INFO - Update id=864039932 is handled. Duration 203 ms by bot id=8127535202
+2025-03-06 03:40:12,621 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:40:12,626 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:40:12,747 - aiogram.event - INFO - Update id=864039933 is handled. Duration 188 ms by bot id=8127535202
+2025-03-06 03:40:13,939 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:40:14,076 - aiogram.event - INFO - Update id=864039934 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 03:40:41,344 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:40:41,599 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:40:41,602 - root - INFO - Бот завершает работу...
+2025-03-06 03:40:45,377 - root - INFO - Логирование настроено.
+2025-03-06 03:40:45,377 - root - INFO - Запуск бота...
+2025-03-06 03:40:45,574 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:40:45,574 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:40:45,844 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:40:47,356 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:40:47,364 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:40:47,654 - aiogram.event - INFO - Update id=864039935 is handled. Duration 344 ms by bot id=8127535202
+2025-03-06 03:40:48,688 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:40:48,787 - aiogram.event - INFO - Update id=864039936 is not handled. Duration 93 ms by bot id=8127535202
+2025-03-06 03:40:48,787 - aiogram.event - ERROR - Cause exception while process update id=864039936 by bot id=8127535202
+TypeError: Message.edit_text() missing 1 required positional argument: 'text'
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\start.py", line 123, in return_to_menu
+    await callback.message.edit_text(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Message.edit_text() missing 1 required positional argument: 'text'
+2025-03-06 03:41:57,467 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:41:57,718 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:41:57,718 - root - INFO - Бот завершает работу...
+2025-03-06 03:42:01,429 - root - INFO - Логирование настроено.
+2025-03-06 03:42:01,429 - root - INFO - Запуск бота...
+2025-03-06 03:42:01,619 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:42:01,620 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:42:01,775 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:42:03,601 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:42:03,875 - aiogram.event - INFO - Update id=864039937 is handled. Duration 282 ms by bot id=8127535202
+2025-03-06 03:42:05,601 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:42:05,607 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:42:05,817 - aiogram.event - INFO - Update id=864039938 is handled. Duration 281 ms by bot id=8127535202
+2025-03-06 03:42:07,317 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:42:07,445 - aiogram.event - INFO - Update id=864039939 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 03:42:09,778 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:42:09,784 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:42:09,894 - aiogram.event - INFO - Update id=864039940 is handled. Duration 187 ms by bot id=8127535202
+2025-03-06 03:42:11,081 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:42:11,197 - aiogram.event - INFO - Update id=864039941 is handled. Duration 109 ms by bot id=8127535202
+2025-03-06 03:43:58,497 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:43:58,741 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:43:58,742 - root - INFO - Бот завершает работу...
+2025-03-06 03:44:02,489 - root - INFO - Логирование настроено.
+2025-03-06 03:44:02,489 - root - INFO - Запуск бота...
+2025-03-06 03:44:02,668 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:44:02,668 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:44:02,836 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:44:03,910 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:44:03,917 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:44:04,289 - aiogram.event - INFO - Update id=864039942 is handled. Duration 546 ms by bot id=8127535202
+2025-03-06 03:44:05,442 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:44:05,591 - aiogram.event - INFO - Update id=864039943 is handled. Duration 140 ms by bot id=8127535202
+2025-03-06 03:44:07,698 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:44:07,703 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:44:08,053 - aiogram.event - INFO - Update id=864039944 is handled. Duration 420 ms by bot id=8127535202
+2025-03-06 03:44:10,915 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:44:11,039 - aiogram.event - INFO - Update id=864039945 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 03:44:13,347 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:44:13,352 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:44:13,498 - aiogram.event - INFO - Update id=864039946 is handled. Duration 203 ms by bot id=8127535202
+2025-03-06 03:44:37,964 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 03:44:38,220 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:44:38,222 - root - INFO - Бот завершает работу...
+2025-03-06 03:44:42,067 - root - INFO - Логирование настроено.
+2025-03-06 03:44:42,068 - root - INFO - Запуск бота...
+2025-03-06 03:44:42,257 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 03:44:42,257 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 03:44:42,437 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 03:44:44,372 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:44:44,629 - aiogram.event - INFO - Update id=864039947 is handled. Duration 265 ms by bot id=8127535202
+2025-03-06 03:44:45,665 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:44:45,670 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:44:45,807 - aiogram.event - INFO - Update id=864039948 is handled. Duration 202 ms by bot id=8127535202
+2025-03-06 03:44:46,782 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:44:46,919 - aiogram.event - INFO - Update id=864039949 is handled. Duration 125 ms by bot id=8127535202
+2025-03-06 03:44:47,972 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 03:44:47,976 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 03:44:48,143 - aiogram.event - INFO - Update id=864039950 is handled. Duration 234 ms by bot id=8127535202
+2025-03-06 03:44:48,968 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 03:44:49,122 - aiogram.event - INFO - Update id=864039951 is handled. Duration 141 ms by bot id=8127535202
+2025-03-06 11:16:18,171 - root - INFO - Логирование настроено.
+2025-03-06 11:16:18,171 - root - INFO - Запуск бота...
+2025-03-06 11:16:18,390 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 11:16:18,406 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 11:16:31,433 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 11:16:32,379 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 11:16:32,408 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 11:17:33,521 - aiogram.event - INFO - Update id=864039954 is not handled. Duration 61250 ms by bot id=8127535202
+2025-03-06 11:17:33,527 - aiogram.event - ERROR - Cause exception while process update id=864039954 by bot id=8127535202
+TelegramNetworkError: HTTP Client says - Request timeout error
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 1059, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiohttp\streams.py", line 672, in read
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    async with session.post(
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiohttp\client.py", line 1425, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiohttp\client.py", line 730, in _request
+    await resp.start(conn)
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiohttp\client_reqrep.py", line 1054, in start
+    with self._timer:
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiohttp\helpers.py", line 671, in __exit__
+    raise asyncio.TimeoutError from exc_val
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\start.py", line 114, in profile
+    await callback.answer()
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\bot.py", line 498, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 182, in make_request
+    raise TelegramNetworkError(method=method, message="Request timeout error")
+aiogram.exceptions.TelegramNetworkError: HTTP Client says - Request timeout error
+2025-03-06 11:17:51,009 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 11:17:51,025 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 11:18:05,201 - aiogram.event - INFO - Update id=864039955 is not handled. Duration 14266 ms by bot id=8127535202
+2025-03-06 11:18:05,201 - aiogram.event - ERROR - Cause exception while process update id=864039955 by bot id=8127535202
+TelegramBadRequest: Telegram server says - Bad Request: query is too old and response timeout expired or query ID is invalid
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\start.py", line 114, in profile
+    await callback.answer()
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\bot.py", line 498, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 185, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: query is too old and response timeout expired or query ID is invalid
+2025-03-06 11:18:14,296 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 11:18:14,557 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 11:18:14,558 - root - INFO - Бот завершает работу...
+2025-03-06 11:18:19,059 - root - INFO - Логирование настроено.
+2025-03-06 11:18:19,059 - root - INFO - Запуск бота...
+2025-03-06 11:18:19,289 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 11:18:19,289 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 11:18:24,784 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 11:18:53,508 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 11:18:53,515 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 11:19:16,258 - aiogram.event - INFO - Update id=864039956 is not handled. Duration 22844 ms by bot id=8127535202
+2025-03-06 11:19:16,258 - aiogram.event - ERROR - Cause exception while process update id=864039956 by bot id=8127535202
+TelegramBadRequest: Telegram server says - Bad Request: query is too old and response timeout expired or query ID is invalid
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\start.py", line 114, in profile
+    await callback.answer()
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\bot.py", line 498, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 185, in make_request
+    response = self.check_response(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: query is too old and response timeout expired or query ID is invalid
+2025-03-06 20:30:12,648 - root - INFO - Логирование настроено.
+2025-03-06 20:30:12,649 - root - INFO - Запуск бота...
+2025-03-06 20:30:12,884 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 20:30:12,885 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 20:30:13,232 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 20:31:18,251 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 20:31:18,377 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 20:31:18,782 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 20:31:18,783 - aiogram.event - INFO - Update id=864039957 is handled. Duration 530 ms by bot id=8127535202
+2025-03-06 20:31:24,375 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-06 20:31:24,481 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 20:31:24,487 - root - INFO - Получено 3 событий для пользователя 2008871219.
+2025-03-06 20:31:24,492 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 20:31:24,596 - aiogram.event - INFO - Update id=864039958 is handled. Duration 233 ms by bot id=8127535202
+2025-03-06 20:31:46,662 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 20:31:46,668 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 20:31:47,094 - aiogram.event - INFO - Update id=864039959 is handled. Duration 592 ms by bot id=8127535202
+2025-03-06 20:34:18,023 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 20:34:18,276 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 20:34:18,278 - root - INFO - Бот завершает работу...
+2025-03-06 20:34:25,270 - root - INFO - Логирование настроено.
+2025-03-06 20:34:25,270 - root - INFO - Запуск бота...
+2025-03-06 20:34:25,515 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 20:34:25,516 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 20:34:25,839 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 20:34:29,735 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 20:34:30,277 - aiogram.event - INFO - Update id=864039960 is handled. Duration 530 ms by bot id=8127535202
+2025-03-06 20:34:34,090 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-06 20:34:34,311 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 20:34:34,325 - root - INFO - Получено 3 событий для пользователя 2008871219.
+2025-03-06 20:34:34,330 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 20:34:34,495 - aiogram.event - INFO - Update id=864039961 is handled. Duration 406 ms by bot id=8127535202
+2025-03-06 20:34:37,296 - aiogram.event - INFO - Update id=864039962 is not handled. Duration 61 ms by bot id=8127535202
+2025-03-06 20:34:42,955 - aiogram.event - INFO - Update id=864039963 is not handled. Duration 15 ms by bot id=8127535202
+2025-03-06 20:35:49,824 - aiogram.event - INFO - Update id=864039964 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 20:38:45,963 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 20:38:46,218 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 20:38:46,219 - root - INFO - Бот завершает работу...
+2025-03-06 20:38:51,440 - root - INFO - Логирование настроено.
+2025-03-06 20:38:51,440 - root - INFO - Запуск бота...
+2025-03-06 20:38:51,697 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-06 20:38:51,698 - aiogram.dispatcher - INFO - Start polling
+2025-03-06 20:38:52,002 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 20:39:13,706 - aiogram.event - INFO - Update id=864039965 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-06 20:39:17,798 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-06 20:39:17,897 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 20:39:18,230 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 20:39:18,231 - aiogram.event - INFO - Update id=864039966 is handled. Duration 422 ms by bot id=8127535202
+2025-03-06 20:39:20,170 - root - INFO - Успешное подключение к базе данных.
+2025-03-06 20:39:20,175 - root - INFO - Соединение с базой данных закрыто.
+2025-03-06 20:39:20,562 - aiogram.event - INFO - Update id=864039967 is handled. Duration 500 ms by bot id=8127535202
+2025-03-06 20:39:22,508 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-06 20:39:23,021 - aiogram.event - INFO - Update id=864039968 is handled. Duration 515 ms by bot id=8127535202
+2025-03-06 20:42:02,300 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-06 20:42:02,566 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-06 20:42:02,567 - root - INFO - Бот завершает работу...
+2025-03-07 01:59:21,781 - root - INFO - Логирование настроено.
+2025-03-07 01:59:21,782 - root - INFO - Запуск бота...
+2025-03-07 01:59:22,121 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-07 01:59:22,122 - aiogram.dispatcher - INFO - Start polling
+2025-03-07 01:59:23,072 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-07 01:59:27,327 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-07 01:59:27,328 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-07 01:59:32,990 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-07 01:59:32,991 - aiogram.dispatcher - WARNING - Sleep for 1.450473 seconds and try again... (tryings = 1, bot id = 8127535202)
+2025-03-07 01:59:38,826 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-07 01:59:38,827 - aiogram.dispatcher - WARNING - Sleep for 2.007385 seconds and try again... (tryings = 2, bot id = 8127535202)
+2025-03-07 01:59:45,586 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-07 01:59:45,587 - aiogram.dispatcher - WARNING - Sleep for 2.668174 seconds and try again... (tryings = 3, bot id = 8127535202)
+2025-03-07 01:59:45,858 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-07 01:59:46,117 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'AI_assistance'
+2025-03-07 01:59:46,117 - root - INFO - Бот завершает работу...
+2025-03-10 17:57:55,748 - root - INFO - Логирование настроено.
+2025-03-10 17:57:55,750 - root - INFO - Запуск бота...
+2025-03-10 17:57:55,934 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-10 17:57:55,934 - aiogram.dispatcher - INFO - Start polling
+2025-03-10 17:57:56,143 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 17:58:15,146 - aiogram.event - INFO - Update id=864040035 is not handled. Duration 15 ms by bot id=8127535202
+2025-03-10 18:01:52,493 - root - INFO - Пользователь 2008871219 запустил бота.
+2025-03-10 18:01:52,830 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:01:53,080 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:01:53,080 - aiogram.event - INFO - Update id=864040036 is handled. Duration 578 ms by bot id=8127535202
+2025-03-10 18:01:59,350 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:01:59,355 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:01:59,529 - aiogram.event - INFO - Update id=864040037 is handled. Duration 233 ms by bot id=8127535202
+2025-03-10 18:02:02,360 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-10 18:02:02,506 - aiogram.event - INFO - Update id=864040038 is handled. Duration 156 ms by bot id=8127535202
+2025-03-10 18:07:21,472 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-10 18:07:21,742 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:07:21,742 - root - INFO - Бот завершает работу...
+2025-03-10 18:07:27,350 - root - INFO - Логирование настроено.
+2025-03-10 18:07:27,350 - root - INFO - Запуск бота...
+2025-03-10 18:07:27,541 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-10 18:07:27,541 - aiogram.dispatcher - INFO - Start polling
+2025-03-10 18:07:27,678 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:07:32,557 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-10 18:07:32,840 - aiogram.event - INFO - Update id=864040039 is handled. Duration 281 ms by bot id=8127535202
+2025-03-10 18:15:28,525 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-10 18:15:28,774 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:15:28,775 - root - INFO - Бот завершает работу...
+2025-03-10 18:15:33,029 - root - INFO - Логирование настроено.
+2025-03-10 18:15:33,029 - root - INFO - Запуск бота...
+2025-03-10 18:15:33,217 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-10 18:15:33,218 - aiogram.dispatcher - INFO - Start polling
+2025-03-10 18:15:33,405 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:16:26,362 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-10 18:16:26,621 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:16:26,621 - root - INFO - Бот завершает работу...
+2025-03-10 18:16:31,394 - root - INFO - Логирование настроено.
+2025-03-10 18:16:31,394 - root - INFO - Запуск бота...
+2025-03-10 18:16:31,568 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-10 18:16:31,569 - aiogram.dispatcher - INFO - Start polling
+2025-03-10 18:16:31,742 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:16:48,919 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-10 18:16:49,115 - aiogram.event - INFO - Update id=864040040 is handled. Duration 203 ms by bot id=8127535202
+2025-03-10 18:17:10,308 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-10 18:17:10,571 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:17:10,573 - root - INFO - Бот завершает работу...
+2025-03-10 18:17:14,504 - root - INFO - Логирование настроено.
+2025-03-10 18:17:14,504 - root - INFO - Запуск бота...
+2025-03-10 18:17:14,677 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-10 18:17:14,677 - aiogram.dispatcher - INFO - Start polling
+2025-03-10 18:17:14,871 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:17:22,211 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-10 18:17:22,213 - aiogram.event - INFO - Update id=864040041 is not handled. Duration 0 ms by bot id=8127535202
+2025-03-10 18:17:22,213 - aiogram.event - ERROR - Cause exception while process update id=864040041 by bot id=8127535202
+ValidationError: 1 validation error for SendMessage
+text
+  Input should be a valid string [type=string_type, input_value=<aiogram.types.input_file...t at 0x00000265E8E07560>, input_type=FSInputFile]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\start.py", line 174, in return_to_menu
+    await message.answer(
+          ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\types\message.py", line 2091, in answer
+    return SendMessage(
+           ^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\pydantic\main.py", line 214, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+pydantic_core._pydantic_core.ValidationError: 1 validation error for SendMessage
+text
+  Input should be a valid string [type=string_type, input_value=<aiogram.types.input_file...t at 0x00000265E8E07560>, input_type=FSInputFile]
+    For further information visit https://errors.pydantic.dev/2.10/v/string_type
+2025-03-10 18:18:47,167 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-10 18:18:47,431 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:18:47,432 - root - INFO - Бот завершает работу...
+2025-03-10 18:18:51,194 - root - INFO - Логирование настроено.
+2025-03-10 18:18:51,194 - root - INFO - Запуск бота...
+2025-03-10 18:18:51,373 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-10 18:18:51,374 - aiogram.dispatcher - INFO - Start polling
+2025-03-10 18:18:51,513 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:18:54,571 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-10 18:18:57,034 - aiogram.event - INFO - Update id=864040042 is handled. Duration 2468 ms by bot id=8127535202
+2025-03-10 18:19:02,779 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-10 18:19:02,992 - aiogram.event - INFO - Update id=864040043 is handled. Duration 219 ms by bot id=8127535202
+2025-03-10 18:19:05,014 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:19:05,039 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:19:05,302 - aiogram.event - INFO - Update id=864040044 is handled. Duration 375 ms by bot id=8127535202
+2025-03-10 18:19:06,761 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-10 18:19:07,135 - aiogram.event - INFO - Update id=864040045 is handled. Duration 375 ms by bot id=8127535202
+2025-03-10 18:21:06,765 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-10 18:21:07,010 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:21:07,011 - root - INFO - Бот завершает работу...
+2025-03-10 18:21:10,724 - root - INFO - Логирование настроено.
+2025-03-10 18:21:10,724 - root - INFO - Запуск бота...
+2025-03-10 18:21:10,906 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-10 18:21:10,906 - aiogram.dispatcher - INFO - Start polling
+2025-03-10 18:21:11,112 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:21:15,725 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:21:15,734 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:21:16,111 - aiogram.event - INFO - Update id=864040046 is handled. Duration 453 ms by bot id=8127535202
+2025-03-10 18:21:17,281 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-10 18:21:17,352 - aiogram.event - INFO - Update id=864040047 is not handled. Duration 78 ms by bot id=8127535202
+2025-03-10 18:21:17,352 - aiogram.event - ERROR - Cause exception while process update id=864040047 by bot id=8127535202
+AttributeError: 'CallbackQuery' object has no attribute 'answer_photo'
+Traceback (most recent call last):
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "D:\BraiLook\AI_Assist\handlers\start.py", line 125, in return_to_menu
+    await callback.answer_photo(
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\BraiLook\AI_Assist\.venv\Lib\site-packages\pydantic\main.py", line 891, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'CallbackQuery' object has no attribute 'answer_photo'
+2025-03-10 18:21:33,594 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-10 18:21:33,841 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:21:33,843 - root - INFO - Бот завершает работу...
+2025-03-10 18:21:37,880 - root - INFO - Логирование настроено.
+2025-03-10 18:21:37,880 - root - INFO - Запуск бота...
+2025-03-10 18:21:38,066 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-10 18:21:38,066 - aiogram.dispatcher - INFO - Start polling
+2025-03-10 18:21:38,215 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 18:21:41,528 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-10 18:21:42,283 - aiogram.event - INFO - Update id=864040048 is handled. Duration 750 ms by bot id=8127535202
+2025-03-10 18:25:37,980 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:25:37,996 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:25:38,231 - aiogram.event - INFO - Update id=864040049 is handled. Duration 311 ms by bot id=8127535202
+2025-03-10 18:25:39,947 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-10 18:25:40,202 - aiogram.event - INFO - Update id=864040050 is handled. Duration 250 ms by bot id=8127535202
+2025-03-10 18:26:17,537 - root - INFO - Пользователь 2135123898 вернулся в меню.
+2025-03-10 18:26:17,666 - aiogram.event - INFO - Update id=864040051 is handled. Duration 125 ms by bot id=8127535202
+2025-03-10 18:26:20,435 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:26:20,441 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:26:20,660 - aiogram.event - INFO - Update id=864040052 is handled. Duration 296 ms by bot id=8127535202
+2025-03-10 18:26:23,217 - root - INFO - Пользователь 2135123898 запустил бота.
+2025-03-10 18:26:23,280 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:26:23,421 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:26:23,421 - aiogram.event - INFO - Update id=864040053 is handled. Duration 203 ms by bot id=8127535202
+2025-03-10 18:26:26,187 - aiogram.event - INFO - Update id=864040054 is handled. Duration 186 ms by bot id=8127535202
+2025-03-10 18:26:29,116 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:26:29,129 - root - INFO - Пользователь 2135123898 зарегистрирован.
+2025-03-10 18:26:29,130 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:26:29,217 - aiogram.event - INFO - Update id=864040055 is handled. Duration 156 ms by bot id=8127535202
+2025-03-10 18:26:31,422 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:26:31,422 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:26:31,643 - aiogram.event - INFO - Update id=864040056 is handled. Duration 296 ms by bot id=8127535202
+2025-03-10 18:26:34,419 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-10 18:26:34,471 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:26:34,492 - root - INFO - Получено 3 событий для пользователя 2008871219.
+2025-03-10 18:26:34,495 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:26:34,621 - aiogram.event - INFO - Update id=864040057 is handled. Duration 203 ms by bot id=8127535202
+2025-03-10 18:26:38,915 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-10 18:26:39,220 - aiogram.event - INFO - Update id=864040058 is handled. Duration 296 ms by bot id=8127535202
+2025-03-10 18:26:40,760 - root - INFO - Пользователь 2135123898 начал создание события.
+2025-03-10 18:26:40,979 - aiogram.event - INFO - Update id=864040059 is handled. Duration 218 ms by bot id=8127535202
+2025-03-10 18:26:48,019 - root - INFO - Пользователь 2135123898 ввел название события: 10
+2025-03-10 18:26:48,216 - aiogram.event - INFO - Update id=864040060 is handled. Duration 203 ms by bot id=8127535202
+2025-03-10 18:26:50,145 - root - INFO - Пользователь 2135123898 выбрал год: 2025
+2025-03-10 18:26:50,218 - aiogram.event - INFO - Update id=864040061 is handled. Duration 62 ms by bot id=8127535202
+2025-03-10 18:26:50,875 - root - INFO - Пользователь 2135123898 выбрал месяц: 7
+2025-03-10 18:26:51,000 - aiogram.event - INFO - Update id=864040062 is handled. Duration 125 ms by bot id=8127535202
+2025-03-10 18:26:51,548 - root - INFO - Пользователь 2135123898 выбрал дату: 2025-07-22
+2025-03-10 18:26:51,611 - aiogram.event - INFO - Update id=864040063 is handled. Duration 78 ms by bot id=8127535202
+2025-03-10 18:26:52,368 - root - INFO - Пользователь 2135123898 выбрал время: 15:00
+2025-03-10 18:26:52,452 - aiogram.event - INFO - Update id=864040064 is handled. Duration 78 ms by bot id=8127535202
+2025-03-10 18:26:56,249 - root - INFO - Пользователь 2135123898 пропустил описание события.
+2025-03-10 18:26:56,249 - root - INFO - Событие '10' создано пользователем 2135123898.
+2025-03-10 18:26:56,426 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:26:56,435 - root - INFO - Событие '10' добавлено в базу данных.
+2025-03-10 18:26:56,439 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:26:56,554 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 18:26:56,555 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 18:26:56,555 - apscheduler.scheduler - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-10 18:26:56,555 - aiogram.event - INFO - Update id=864040065 is handled. Duration 311 ms by bot id=8127535202
+2025-03-10 18:26:58,536 - root - INFO - Пользователь 2135123898 вернулся в меню.
+2025-03-10 18:26:58,705 - aiogram.event - INFO - Update id=864040066 is handled. Duration 156 ms by bot id=8127535202
+2025-03-10 18:27:01,098 - root - INFO - Пользователь 2008871219 вернулся в меню.
+2025-03-10 18:27:01,240 - root - INFO - Пользователь 2135123898 запросил свои события.
+2025-03-10 18:27:01,300 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:27:01,303 - root - INFO - Получено 1 событий для пользователя 2135123898.
+2025-03-10 18:27:01,306 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:27:01,478 - aiogram.event - INFO - Update id=864040067 is handled. Duration 375 ms by bot id=8127535202
+2025-03-10 18:27:01,763 - aiogram.event - INFO - Update id=864040068 is handled. Duration 531 ms by bot id=8127535202
+2025-03-10 18:28:54,410 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:28:54,415 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:28:54,551 - aiogram.event - INFO - Update id=864040069 is handled. Duration 328 ms by bot id=8127535202
+2025-03-10 18:28:57,066 - root - INFO - Пользователь 8127535202 вернулся в меню.
+2025-03-10 18:28:57,492 - aiogram.event - INFO - Update id=864040070 is handled. Duration 421 ms by bot id=8127535202
+2025-03-10 18:28:58,507 - root - INFO - Пользователь 2008871219 запросил свои события.
+2025-03-10 18:28:58,570 - root - INFO - Успешное подключение к базе данных.
+2025-03-10 18:28:58,578 - root - INFO - Получено 3 событий для пользователя 2008871219.
+2025-03-10 18:28:58,578 - root - INFO - Соединение с базой данных закрыто.
+2025-03-10 18:28:58,829 - aiogram.event - INFO - Update id=864040071 is handled. Duration 328 ms by bot id=8127535202
+2025-03-10 20:39:35,922 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-03-10 20:39:35,923 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-10 20:39:47,099 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8127535202)
+2025-03-10 22:51:25,636 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-03-10 22:51:25,668 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-10 22:51:37,178 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8127535202)
+2025-03-10 23:13:58,546 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+2025-03-10 23:13:58,553 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-10 23:14:09,839 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8127535202)
+2025-03-10 23:16:35,097 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-10 23:16:35,499 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-10 23:16:35,529 - root - INFO - Бот завершает работу...
+2025-03-11 00:31:26,449 - root - INFO - Логирование настроено.
+2025-03-11 00:31:26,452 - root - INFO - Запуск бота...
+2025-03-11 00:31:26,675 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-11 00:31:26,679 - aiogram.dispatcher - INFO - Start polling
+2025-03-11 00:31:27,339 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-11 00:31:27,457 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:31:27,457 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-11 00:31:31,637 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:31:31,638 - aiogram.dispatcher - WARNING - Sleep for 1.502333 seconds and try again... (tryings = 1, bot id = 8127535202)
+2025-03-11 00:31:33,274 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:31:33,275 - aiogram.dispatcher - WARNING - Sleep for 1.980234 seconds and try again... (tryings = 2, bot id = 8127535202)
+2025-03-11 00:31:38,395 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:31:38,396 - aiogram.dispatcher - WARNING - Sleep for 2.550893 seconds and try again... (tryings = 3, bot id = 8127535202)
+2025-03-11 00:31:41,064 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:31:41,138 - aiogram.dispatcher - WARNING - Sleep for 3.447681 seconds and try again... (tryings = 4, bot id = 8127535202)
+2025-03-11 00:31:44,717 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:31:44,720 - aiogram.dispatcher - WARNING - Sleep for 4.515256 seconds and try again... (tryings = 5, bot id = 8127535202)
+2025-03-11 00:31:49,352 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:31:49,353 - aiogram.dispatcher - WARNING - Sleep for 5.200923 seconds and try again... (tryings = 6, bot id = 8127535202)
+2025-03-11 00:31:52,460 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-11 00:31:52,695 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-11 00:31:52,696 - root - INFO - Бот завершает работу...
+2025-03-11 00:32:21,704 - root - INFO - Логирование настроено.
+2025-03-11 00:32:21,704 - root - INFO - Запуск бота...
+2025-03-11 00:32:22,026 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-11 00:32:22,027 - aiogram.dispatcher - INFO - Start polling
+2025-03-11 00:32:22,644 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-11 00:32:22,870 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:32:22,871 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-11 00:32:27,037 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:32:27,039 - aiogram.dispatcher - WARNING - Sleep for 1.226288 seconds and try again... (tryings = 1, bot id = 8127535202)
+2025-03-11 00:32:28,470 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:32:28,471 - aiogram.dispatcher - WARNING - Sleep for 1.553035 seconds and try again... (tryings = 2, bot id = 8127535202)
+2025-03-11 00:32:33,160 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:32:33,161 - aiogram.dispatcher - WARNING - Sleep for 1.965307 seconds and try again... (tryings = 3, bot id = 8127535202)
+2025-03-11 00:32:35,331 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:32:35,332 - aiogram.dispatcher - WARNING - Sleep for 2.528834 seconds and try again... (tryings = 4, bot id = 8127535202)
+2025-03-11 00:32:41,065 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:32:41,067 - aiogram.dispatcher - WARNING - Sleep for 3.447673 seconds and try again... (tryings = 5, bot id = 8127535202)
+2025-03-11 00:32:43,487 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-11 00:32:43,757 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-11 00:32:43,759 - root - INFO - Бот завершает работу...
+2025-03-11 00:33:35,231 - root - INFO - Логирование настроено.
+2025-03-11 00:33:35,231 - root - INFO - Запуск бота...
+2025-03-11 00:33:35,466 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-11 00:33:35,466 - aiogram.dispatcher - INFO - Start polling
+2025-03-11 00:33:35,965 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-11 00:33:36,180 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:33:36,181 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-11 00:33:40,357 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:33:40,357 - aiogram.dispatcher - WARNING - Sleep for 1.136860 seconds and try again... (tryings = 1, bot id = 8127535202)
+2025-03-11 00:33:40,895 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-11 00:33:41,162 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-11 00:33:41,164 - root - INFO - Бот завершает работу...
+2025-03-11 00:36:07,582 - root - INFO - Логирование настроено.
+2025-03-11 00:36:07,582 - root - INFO - Запуск бота...
+2025-03-11 00:36:07,800 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-11 00:36:07,800 - aiogram.dispatcher - INFO - Start polling
+2025-03-11 00:36:08,439 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-11 00:36:08,656 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:36:08,657 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-11 00:36:12,804 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:36:12,805 - aiogram.dispatcher - WARNING - Sleep for 1.217031 seconds and try again... (tryings = 1, bot id = 8127535202)
+2025-03-11 00:36:13,272 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-11 00:36:13,528 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-11 00:36:13,531 - root - INFO - Бот завершает работу...
+2025-03-11 00:37:12,153 - root - INFO - Логирование настроено.
+2025-03-11 00:37:12,153 - root - INFO - Запуск бота...
+2025-03-11 00:37:12,352 - root - INFO - Бот запущен и ожидает сообщений...
+2025-03-11 00:37:12,353 - aiogram.dispatcher - INFO - Start polling
+2025-03-11 00:37:12,676 - aiogram.dispatcher - INFO - Run polling for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-11 00:37:12,774 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: can't use getUpdates method while webhook is active; use deleteWebhook to delete the webhook first
+2025-03-11 00:37:12,775 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8127535202)
+2025-03-11 00:37:14,582 - aiogram.dispatcher - INFO - Polling stopped
+2025-03-11 00:37:14,838 - aiogram.dispatcher - INFO - Polling stopped for bot @AI_assistancebot id=8127535202 - 'BrainLook virtual assistant'
+2025-03-11 00:37:14,842 - root - INFO - Бот завершает работу...
