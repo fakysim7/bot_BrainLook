@@ -35,7 +35,7 @@ async def ask_next_question(message: types.Message, state: FSMContext):
     # Отправляем вопрос пользователю
     await message.answer(assistant_response)
 
-@router.message(EventCreationStates.waiting_for_data)
+@router.message(EventCreationStates.waiting_for_date)
 async def process_user_input(message: types.Message, state: FSMContext):
     user_input = message.text
     data = await state.get_data()
