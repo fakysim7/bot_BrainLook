@@ -17,8 +17,8 @@ class Registration(StatesGroup):
     age = State()
     workplace = State()
 
-
 class EventCreationStates(StatesGroup):
+    waiting_for_data = State()  # Общее состояние для сбора данных
     waiting_for_title = State()  # Ожидание названия события
     waiting_for_date = State()   # Ожидание даты
     waiting_for_time = State()   # Ожидание времени
