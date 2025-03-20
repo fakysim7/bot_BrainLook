@@ -39,12 +39,20 @@ async def process_user_input(message: types.Message, state: FSMContext):
     data = await state.get_data()
     collected_data = data.get("collected_data", {})
 
+    # Если название события еще не задано, считаем ответ названием
+    if "Название" not in collected_data:
+        collected_data["Название"] = user_input
+        await state.update_data(collected_data=collected_data)
+        await ask_next_question(message, state)
+        return
+
     # Формируем промпт для GPT, чтобы определить, какой ключ обновить
     prompt = f"""
     Чат, ты выступаешь в роли ассистента, помогаешь с созданием события через бота.
     Пользователь ввел следующее: {user_input}.
     Уже собраны следующие данные: {collected_data}.
     Определи, какой ключ ("Название", "Дата", "Время", "Место", "Тип события", "Гости") нужно обновить, и верни его.
+    Если название события еще не задано, верни "Название".
     """
 
     # Получаем ответ от GPT
