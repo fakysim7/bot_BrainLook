@@ -7,8 +7,6 @@ from keyboards.main_menu import inline_keyboard
 
 router = Router()
 
-
-
 @router.callback_query(lambda c: c.data == "events")
 async def start_event_creation(callback: types.CallbackQuery, state: FSMContext):
     await callback.answer()
@@ -35,7 +33,7 @@ async def ask_next_question(message: types.Message, state: FSMContext):
     # Отправляем вопрос пользователю
     await message.answer(assistant_response)
 
-@router.message(EventCreationStates.waiting_for_date)
+@router.message(EventCreationStates.waiting_for_data)
 async def process_user_input(message: types.Message, state: FSMContext):
     user_input = message.text
     data = await state.get_data()
