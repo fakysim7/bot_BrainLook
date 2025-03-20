@@ -16,3 +16,6 @@ class ProfileStates(StatesGroup):
 class Registration(StatesGroup):
     age = State()
     workplace = State()
+
+class DialogStates(StatesGroup):
+    waiting_for_event_data = State() 
