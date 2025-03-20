@@ -1,5 +1,8 @@
 from aiogram import types
 from aiogram import Router
+from aiogram.fsm.context import FSMContext
+from aiogram.fsm.state import State, StatesGroup
+from utils.states import DialogStates
 from AI.gpt import get_gpt_response
 from database.crud import create_event
 from keyboards.main_menu import inline_keyboard
@@ -19,10 +22,13 @@ def extract_keys(response):
             keys[key] = value
     return keys
 
-@router.message()
-async def handle_message(message: types.Message):
+@router.message(DialogStates.waiting_for_event_data)
+async def handle_event_dialog(message: types.Message, state: FSMContext):
     user_message = message.text
     token_max = 100
+
+    # Получаем текущие данные из состояния (если они есть)
+    data = await state.get_data()
 
     # Формируем промпт для OpenAI
     prompt = f"""
@@ -47,8 +53,13 @@ async def handle_message(message: types.Message):
     # Извлекаем ключи из ответа ассистента
     keys = extract_keys(assistant_response)
 
-    # Сохраняем данные в базу данных
-    if keys:
+    # Сохраняем данные в состояние
+    await state.update_data(keys)
+
+    # Если все ключи собраны, завершаем диалог
+    required_keys = ["Название", "Дата", "Время", "Место", "Тип"]
+    if all(key in keys for key in required_keys):
+        # Сохраняем данные в базу данных
         await create_event(
             title=keys.get("Название"),
             date=keys.get("Дата"),
@@ -59,17 +70,25 @@ async def handle_message(message: types.Message):
             guests=keys.get("Гости")
         )
 
+        # Завершаем состояние диалога
+        await state.clear()
+        await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
+
 @router.callback_query(lambda c: c.data == "events")
-async def get_button_event(callback: types.CallbackQuery):
+async def get_button_event(callback: types.CallbackQuery, state: FSMContext):
     # Убираем "часики" у кнопки
     await callback.answer()
 
-    # Отправляем сообщение о начале создания события
-    await callback.message.edit_text("Создание события")
+    # Устанавливаем состояние диалога
+    await state.set_state(DialogStates.waiting_for_event_data)
 
-    # Запускаем диалог с пользователем
-    await handle_message(callback.message)
+    # Отправляем начальный промпт
+    await callback.message.answer("Давайте создадим событие. Введите название события:")
 
 @router.message(lambda message: message.text == "Выход в меню")
-async def return_to_menu(message: types.Message):
-    await message.edit_text("Вы вернулись в главное меню.", reply_markup=inline_keyboard)
+async def return_to_menu(message: types.Message, state: FSMContext):
+    # Сбрасываем состояние
+    await state.clear()
+
+    # Возвращаемся в главное меню
+    await message.answer("Вы вернулись в главное меню.", reply_markup=inline_keyboard)
