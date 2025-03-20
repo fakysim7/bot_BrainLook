@@ -17,5 +17,13 @@ class Registration(StatesGroup):
     age = State()
     workplace = State()
 
-class DialogStates(StatesGroup):
-    waiting_for_event_data = State() 
+class EventCreationStates(StatesGroup):
+    waiting_for_data = State()  # Общее состояние для сбора данных
+
+class EventCreationStates(StatesGroup):
+    waiting_for_title = State()  # Ожидание названия события
+    waiting_for_date = State()   # Ожидание даты
+    waiting_for_time = State()   # Ожидание времени
+    waiting_for_place = State()  # Ожидание места
+    waiting_for_type = State()   # Ожидание типа события
+    waiting_for_guests = State() # Ожидание списка гостей
