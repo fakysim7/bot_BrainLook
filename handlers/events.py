@@ -124,9 +124,7 @@ async def save_and_finish(message: types.Message, state: FSMContext, collected_d
     
     await state.clear()
     await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
-    
-    await state.clear()
-    await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
+
 
 @router.message(lambda message: message.text == "Выход в меню")
 async def return_to_menu(message: types.Message, state: FSMContext):
