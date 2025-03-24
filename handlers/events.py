@@ -117,9 +117,13 @@ async def save_and_finish(message: types.Message, state: FSMContext, collected_d
         date=collected_data.get("Дата"),
         time=collected_data.get("Время"),
         place=collected_data.get("Место"),
+        address=None,  # Добавляем address=None, если поле необязательное
         event_type=collected_data.get("Тип события"),
         guests=collected_data.get("Гости")
     )
+    
+    await state.clear()
+    await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
     
     await state.clear()
     await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
