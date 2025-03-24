@@ -7,76 +7,122 @@ from keyboards.main_menu import inline_keyboard
 
 router = Router()
 
+# Список обязательных полей и их порядок
+REQUIRED_FIELDS = [
+    "Название",
+    "Дата", 
+    "Время",
+    "Место",
+    "Тип события"
+]
+
 @router.callback_query(lambda c: c.data == "events")
 async def start_event_creation(callback: types.CallbackQuery, state: FSMContext):
     await callback.answer()
-    await state.set_state(EventCreationStates.waiting_for_data)
-    await state.update_data(collected_data={})  # Инициализация пустого словаря для данных
-    await ask_next_question(callback.message, state)
+    # Инициализируем данные и запоминаем текущий шаг
+    await state.update_data({
+        'collected_data': {},
+        'current_field_index': 0
+    })
+    await state.set_state(EventCreationStates.waiting_for_date)
+    await ask_for_field(callback.message, state)
 
-async def ask_next_question(message: types.Message, state: FSMContext):
+async def ask_for_field(message: types.Message, state: FSMContext):
     data = await state.get_data()
-    collected_data = data.get("collected_data", {})
-
-    # Формируем промпт для GPT
-    prompt = f"""
-    Чат, ты выступаешь в роли ассистента, помогаешь с созданием события через бота.
-    Уже собраны следующие данные: {collected_data}.
-    Сгенерируй следующий вопрос для пользователя, чтобы собрать недостающие данные.
-    Необходимые пункты:
-    "Название", "Дата", "Время", "Место", "Тип события", "Гости".
-    """
-
-    # Получаем ответ от GPT
-    assistant_response = get_gpt_response(prompt)
-
-    # Отправляем вопрос пользователю
-    await message.answer(assistant_response)
-
-@router.message(EventCreationStates.waiting_for_data)
-async def process_user_input(message: types.Message, state: FSMContext):
-    user_input = message.text
-    data = await state.get_data()
-    collected_data = data.get("collected_data", {})
-
-    # Если название события еще не задано, считаем ответ названием
-    if "Название" not in collected_data:
-        collected_data["Название"] = user_input
-        await state.update_data(collected_data=collected_data)
-        await ask_next_question(message, state)
-        return
-
-    # Формируем промпт для GPT, чтобы определить, какой ключ обновить
-    prompt = f"""
-    Чат, ты выступаешь в роли ассистента, помогаешь с созданием события через бота.
-    Пользователь ввел следующее: {user_input}.
-    Уже собраны следующие данные: {collected_data}.
-    Определи, какой ключ ("Название", "Дата", "Время", "Место", "Тип события", "Гости") нужно обновить, и верни его.
-    Если название события еще не задано, верни "Название".
-    """
-
-    # Получаем ответ от GPT
-    key_to_update = get_gpt_response(prompt)
-
-    # Обновляем данные
-    collected_data[key_to_update] = user_input
-    await state.update_data(collected_data=collected_data)
-
-    # Проверяем, все ли данные собраны
-    required_keys = ["Название", "Дата", "Время", "Место", "Тип события"]
-    if all(key in collected_data for key in required_keys):
-        await create_event(
-            title=collected_data.get("Название"),
-            date=collected_data.get("Дата"),
-            time=collected_data.get("Время"),
-            place=collected_data.get("Место"),
-            event_type=collected_data.get("Тип события"),
-            guests=collected_data.get("Гости")
-        )
-        await state.clear()
-        await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
+    current_index = data['current_field_index']
+    
+    # Проверяем, есть ли еще поля для заполнения
+    if current_index < len(REQUIRED_FIELDS):
+        current_field = REQUIRED_FIELDS[current_index]
+        
+        # Формируем вопрос для текущего поля
+        prompt = f"""
+        Сгенерируй вопрос для пользователя, чтобы получить информацию для поля "{current_field}".
+        Будь дружелюбным и конкретным. Примеры:
+        - Для "Название": "Как назовем ваше событие?"
+        - Для "Дата": "На какую дату планируем событие? (например, 15.06.2023)"
+        """
+        
+        question = get_gpt_response(prompt)
+        await message.answer(question)
     else:
-        await ask_next_question(message, state)
+        # Все обязательные поля заполнены
+        await handle_completed_data(message, state)
+
+@router.message(EventCreationStates.waiting_for_date)
+async def process_user_input(message: types.Message, state: FSMContext):
+    user_input = message.text.strip()
+    data = await state.get_data()
+    current_index = data['current_field_index']
+    collected_data = data['collected_data']
+    
+    # Проверяем, что ввод не пустой
+    if not user_input:
+        await message.answer("Пожалуйста, введите корректные данные.")
+        return
+    
+    # Получаем текущее поле и сохраняем ответ
+    current_field = REQUIRED_FIELDS[current_index]
+    collected_data[current_field] = user_input
+    
+    # Обновляем состояние
+    await state.update_data({
+        'collected_data': collected_data,
+        'current_field_index': current_index + 1
+    })
+    
+    # Переходим к следующему полю или завершаем
+    if current_index + 1 < len(REQUIRED_FIELDS):
+        await ask_for_field(message, state)
+    else:
+        await handle_completed_data(message, state)
+
+async def handle_completed_data(message: types.Message, state: FSMContext):
+    data = await state.get_data()
+    collected_data = data['collected_data']
+    
+    # Спрашиваем про необязательные поля
+    if "Гости" not in collected_data:
+        prompt = """Нужно ли указать список гостей? (Да/Нет)"""
+        await message.answer(prompt)
+        await state.set_state(EventCreationStates.waiting_for_guests)
+    else:
+        await save_and_finish(message, state, collected_data)
+
+@router.message(EventCreationStates.waiting_for_guests)
+async def process_guests(message: types.Message, state: FSMContext):
+    user_input = message.text.strip().lower()
+    data = await state.get_data()
+    collected_data = data['collected_data']
+    
+    if user_input == 'да':
+        await message.answer("Введите список гостей (через запятую):")
+        await state.set_state(EventCreationStates.waiting_for_guests)
+    else:
+        collected_data['Гости'] = None
+        await save_and_finish(message, state, collected_data)
+
+@router.message(EventCreationStates.waiting_for_guests)
+async def process_guests_list(message: types.Message, state: FSMContext):
+    guests = [g.strip() for g in message.text.split(',')]
+    data = await state.get_data()
+    collected_data = data['collected_data']
+    collected_data['Гости'] = guests
+    await save_and_finish(message, state, collected_data)
+
+async def save_and_finish(message: types.Message, state: FSMContext, collected_data: dict):
+    # Сохраняем событие в БД
+    await create_event(
+        title=collected_data.get("Название"),
+        date=collected_data.get("Дата"),
+        time=collected_data.get("Время"),
+        place=collected_data.get("Место"),
+        event_type=collected_data.get("Тип события"),
+        guests=collected_data.get("Гости")
+    )
+    
+    await state.clear()
+    await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
 
 @router.message(lambda message: message.text == "Выход в меню")
 async def return_to_menu(message: types.Message, state: FSMContext):
