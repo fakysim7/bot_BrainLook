@@ -1,57 +1,52 @@
-from aiogram import types, Router
-from aiogram.fsm.context import FSMContext
-from utils.states import EventCreationStates
-from AI.gpt import get_gpt_response
-from database.crud import create_event
-from keyboards.main_menu import inline_keyboard
 import json
-
-router = Router()
-
-@router.callback_query(lambda c: c.data == "events")
-async def start_event_creation(callback: types.CallbackQuery, state: FSMContext):
-    await callback.answer()
-    
-    # Начинаем диалог с GPT, создаём пустой JSON для данных
-    event_data = {}
-    prompt = "Ты ведущий диалога для создания события. Сформулируй первый вопрос пользователю."
-    
-    response = get_gpt_response(prompt)
-    
-    # Сохраняем состояние
-    await state.update_data(event_data=event_data)
-    await state.set_state(EventCreationStates.collecting_data)
-    
-    await callback.message.answer(response)
+from aiogram import types
+from aiogram.fsm.context import FSMContext
+from your_module import get_gpt_response, create_event  # Импорты нужных функций
 
 @router.message(EventCreationStates.collecting_data)
 async def process_user_input(message: types.Message, state: FSMContext):
     user_input = message.text.strip()
-    
+
     # Получаем текущее состояние
     data = await state.get_data()
     event_data = data.get('event_data', {})
 
-    # Формируем новый промпт, передавая уже собранные данные
+    # Основные 5 вопросов
+    required_fields = ["Название", "Дата", "Время", "Место", "Тип события"]
+    missing_fields = [field for field in required_fields if field not in event_data]
+
+    if missing_fields:
+        next_question = missing_fields[0]
+    else:
+        next_question = "Дополнительные данные"  # После основных вопросов
+
+    # Формируем запрос к GPT
     prompt = f"""
-    У тебя задача вести диалог по созданию события. 
+    Веди диалог по созданию события.
     Уже собранные данные (JSON): {json.dumps(event_data, ensure_ascii=False)}
     Пользователь ответил: "{user_input}".
     
-    Твои действия:
     1. Обнови JSON, добавив новый ключ (если это был ответ).
-    2. Если ещё есть незаполненные поля — задай новый вопрос.
-    3. Если всё заполнено — напиши "Готово" и отдай финальный JSON.
+    2. Если заполнены все основные 5 вопросов — спроси, хочет ли пользователь добавить еще данные.
+    3. Если все заполнено и пользователь не хочет добавлять, напиши "Готово" и верни JSON.
+    
+    Следующий вопрос: "{next_question}"
     """
     
     response = get_gpt_response(prompt)
-    
-    # Проверяем, завершено ли заполнение
-    if "Готово" in response:
-        # Извлекаем JSON с финальными данными
-        event_data = json.loads(response.split("Готово")[-1].strip())
 
-        # Записываем в БД
+    # Проверяем завершение
+    if "Готово" in response:
+        json_part = response.split("Готово")[-1].strip()
+
+        # Проверка валидности JSON
+        try:
+            event_data = json.loads(json_part)
+        except json.JSONDecodeError:
+            await message.answer("Произошла ошибка при обработке данных. Попробуйте снова.")
+            return
+
+        # Записываем событие в БД
         await create_event(
             title=event_data.get("Название"),
             date=event_data.get("Дата"),
@@ -65,6 +60,9 @@ async def process_user_input(message: types.Message, state: FSMContext):
         await state.clear()
         await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
     else:
-        # Продолжаем диалог
+        # Обновляем состояние и продолжаем диалог
         await state.update_data(event_data=event_data)
-        await message.answer(response)
+
+        # Убираем логи и оставляем только понятный текст для пользователя
+        clean_response = response.split("\n", 1)[-1]  # Убираем возможные служебные строки
+        await message.answer(clean_response)
