@@ -18,10 +18,11 @@ class Registration(StatesGroup):
     workplace = State()
 
 class EventCreationStates(StatesGroup):
-    waiting_for_data = State()  # Общее состояние для сбора данных
-    waiting_for_title = State()  # Ожидание названия события
-    waiting_for_date = State()   # Ожидание даты
-    waiting_for_time = State()   # Ожидание времени
-    waiting_for_place = State()  # Ожидание места
-    waiting_for_type = State()   # Ожидание типа события
-    waiting_for_guests = State() # Ожидание списка гостей
+    collecting_data = State()  
+    waiting_for_title = State()  
+    waiting_for_date = State()   
+    waiting_for_time = State()   
+    waiting_for_place = State()  
+    waiting_for_type = State()   
+    waiting_for_guests = State()
+
