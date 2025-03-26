@@ -34,16 +34,7 @@ async def process_user_input(message: types.Message, state: FSMContext):
 
     # Получаем текущее состояние
     data = await state.get_data()
-    event_data = data.get('event_data', {})
-
-    # Основные 5 вопросов
-    required_fields = ["Название", "Дата", "Время", "Место", "Тип события"]
-    missing_fields = [field for field in required_fields if field not in event_data]
-
-    if missing_fields:
-        next_question = missing_fields[0]
-    else:
-        next_question = "Дополнительные данные"  # После основных вопросов
+    event_data = data.get("event_data", {})
 
     # Формируем запрос к GPT
     prompt = f"""
@@ -53,24 +44,24 @@ async def process_user_input(message: types.Message, state: FSMContext):
     
     1. Обнови JSON, добавив новый ключ (если это был ответ).
     2. Если заполнены все основные 5 вопросов — спроси, хочет ли пользователь добавить еще данные.
-    3. Если все заполнено и пользователь не хочет добавлять, напиши "Готово" и верни JSON.
+    3. Если все заполнено и пользователь не хочет добавлять, напиши "Готово" и верни JSON отдельно.
     
-    Следующий вопрос: "{next_question}"
+    Отвечай в формате:
+    {{ "updated_json": {{ ... }}, "next_question": "..." }}
     """
-    
+
     response = get_gpt_response(prompt)
 
+    try:
+        response_data = json.loads(response)
+        event_data = response_data["updated_json"]
+        next_question = response_data["next_question"]
+    except (json.JSONDecodeError, KeyError):
+        await message.answer("Произошла ошибка при обработке данных. Попробуйте снова.")
+        return
+
     # Проверяем завершение
-    if "Готово" in response:
-        json_part = response.split("Готово")[-1].strip()
-
-        # Проверка валидности JSON
-        try:
-            event_data = json.loads(json_part)
-        except json.JSONDecodeError:
-            await message.answer("Произошла ошибка при обработке данных. Попробуйте снова.")
-            return
-
+    if next_question == "Готово":
         # Записываем событие в БД
         await create_event(
             title=event_data.get("Название"),
@@ -87,7 +78,5 @@ async def process_user_input(message: types.Message, state: FSMContext):
     else:
         # Обновляем состояние и продолжаем диалог
         await state.update_data(event_data=event_data)
+        await message.answer(next_question)
 
-        # Убираем логи и оставляем только понятный текст для пользователя
-        clean_response = response.split("\n", 1)[-1]  # Убираем возможные служебные строки
-        await message.answer(clean_response)
