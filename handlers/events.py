@@ -8,6 +8,26 @@ import json
 
 router = Router()
 
+
+
+@router.callback_query(lambda c: c.data == "events")
+async def start_event_creation(callback: types.CallbackQuery, state: FSMContext):
+    await callback.answer()
+    
+    # Начинаем диалог с GPT, создаём пустой JSON для данных
+    event_data = {}
+    prompt = "Ты ведущий диалога для создания события. Сформулируй первый вопрос пользователю."
+    
+    response = get_gpt_response(prompt)
+    
+    # Сохраняем состояние
+    await state.update_data(event_data=event_data)
+    await state.set_state(EventCreationStates.collecting_data)
+    
+    await callback.message.answer(response)
+
+
+
 @router.message(EventCreationStates.collecting_data)
 async def process_user_input(message: types.Message, state: FSMContext):
     user_input = message.text.strip()
