@@ -1,7 +1,12 @@
-import json
-from aiogram import types
+from aiogram import types, Router
 from aiogram.fsm.context import FSMContext
-from your_module import get_gpt_response, create_event  # Импорты нужных функций
+from utils.states import EventCreationStates
+from AI.gpt import get_gpt_response
+from database.crud import create_event
+from keyboards.main_menu import inline_keyboard
+import json
+
+router = Router()
 
 @router.message(EventCreationStates.collecting_data)
 async def process_user_input(message: types.Message, state: FSMContext):
