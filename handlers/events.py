@@ -8,25 +8,37 @@ import json
 
 router = Router()
 
-
-
 @router.callback_query(lambda c: c.data == "events")
 async def start_event_creation(callback: types.CallbackQuery, state: FSMContext):
     await callback.answer()
+
+    # Начинаем процесс создания события
+    event_data = {
+        "Название": None,
+        "Дата": None,
+        "Время": None,
+        "Место": None,
+        "Адрес": None,
+        "Тип события": None,
+        "Гости": []
+    }
+
+    prompt = """
+    Ты — умный ассистент, который помогает пользователю создать событие. 
+    Задавай вопросы один за другим, уточняя информацию.
     
-    # Начинаем диалог с GPT, создаём пустой JSON для данных
-    event_data = {}
-    prompt = "Ты ведущий диалога для создания события. Сформулируй первый вопрос пользователю."
+    - Запоминай, что уже было спрошено.
+    - Не задавай одни и те же вопросы.
+    - Веди диалог плавно, поддерживая естественное общение.
     
+    Начнем с первого вопроса: Как называется событие?
+    """
+
     response = get_gpt_response(prompt)
     
-    # Сохраняем состояние
     await state.update_data(event_data=event_data)
     await state.set_state(EventCreationStates.collecting_data)
-    
     await callback.message.answer(response)
-
-
 
 @router.message(EventCreationStates.collecting_data)
 async def process_user_input(message: types.Message, state: FSMContext):
@@ -34,49 +46,39 @@ async def process_user_input(message: types.Message, state: FSMContext):
 
     # Получаем текущее состояние
     data = await state.get_data()
-    event_data = data.get("event_data", {})
+    event_data = data.get('event_data', {})
 
-    # Формируем запрос к GPT
-    prompt = f"""
-    Веди диалог по созданию события.
-    Уже собранные данные (JSON): {json.dumps(event_data, ensure_ascii=False)}
-    Пользователь ответил: "{user_input}".
-    
-    1. Обнови JSON, добавив новый ключ (если это был ответ).
-    2. Если заполнены все основные 5 вопросов — спроси, хочет ли пользователь добавить еще данные.
-    3. Если все заполнено и пользователь не хочет добавлять, напиши "Готово" и верни JSON отдельно.
-    
-    Отвечай в формате:
-    {{ "updated_json": {{ ... }}, "next_question": "..." }}
-    """
+    # Определяем, какой ключ сейчас заполняется
+    keys_order = ["Название", "Дата", "Время", "Место", "Адрес", "Тип события", "Гости"]
+    current_key = next((key for key in keys_order if event_data.get(key) is None), None)
 
-    response = get_gpt_response(prompt)
+    if current_key:
+        event_data[current_key] = user_input
 
-    try:
-        response_data = json.loads(response)
-        event_data = response_data["updated_json"]
-        next_question = response_data["next_question"]
-    except (json.JSONDecodeError, KeyError):
-        await message.answer("Произошла ошибка при обработке данных. Попробуйте снова.")
-        return
+    # Проверяем, есть ли ещё незаполненные поля
+    next_key = next((key for key in keys_order if event_data.get(key) is None), None)
 
-    # Проверяем завершение
-    if next_question == "Готово":
-        # Записываем событие в БД
+    if next_key:
+        prompt = f"""
+        Ты ведешь диалог для создания события. Вот что уже известно:
+        {json.dumps(event_data, ensure_ascii=False, indent=2)}
+        
+        Спроси у пользователя {next_key.lower()}.
+        """
+        response = get_gpt_response(prompt)
+        await state.update_data(event_data=event_data)
+        await message.answer(response)
+    else:
+        # Все данные собраны, записываем в БД
         await create_event(
-            title=event_data.get("Название"),
-            date=event_data.get("Дата"),
-            time=event_data.get("Время"),
-            place=event_data.get("Место"),
-            address=event_data.get("Адрес", None),
-            event_type=event_data.get("Тип события"),
-            guests=event_data.get("Гости", [])
+            title=event_data["Название"],
+            date=event_data["Дата"],
+            time=event_data["Время"],
+            place=event_data["Место"],
+            address=event_data["Адрес"],
+            event_type=event_data["Тип события"],
+            guests=event_data["Гости"]
         )
 
         await state.clear()
         await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
-    else:
-        # Обновляем состояние и продолжаем диалог
-        await state.update_data(event_data=event_data)
-        await message.answer(next_question)
-
