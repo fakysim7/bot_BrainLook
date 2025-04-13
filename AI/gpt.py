@@ -32,17 +32,17 @@ chat_states = {
 def get_gpt_response(prompt: str, state: str = "default") -> str:
     try:
         # Добавляем новое сообщение от пользователя
-        chat_states[state].append({"role": "user", "content": prompt})
+        chat_states[mode].append({"role": "user", "content": prompt})
 
         # Запрос к GPT
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
-            messages=chat_states[state]
+            messages=chat_states[mode]
         )
 
         # Сохраняем ответ ассистента в историю
         reply = response.choices[0].message.content.strip()
-        chat_states[state].append({"role": "assistant", "content": reply})
+        chat_states[mode].append({"role": "assistant", "content": reply})
 
         return reply
     except Exception as e:
