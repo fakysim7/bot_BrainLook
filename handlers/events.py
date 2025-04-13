@@ -1,7 +1,7 @@
 from aiogram import types, Router
 from aiogram.fsm.context import FSMContext
 from utils.states import EventCreationStates
-from AI.gpt import get_gpt_response
+from AI.gpt import get_event_creation_response  # обновлённый импорт
 from database.crud import create_event
 from keyboards.main_menu import inline_keyboard
 import json
@@ -11,83 +11,43 @@ router = Router()
 @router.callback_query(lambda c: c.data == "events")
 async def start_event_creation(callback: types.CallbackQuery, state: FSMContext):
     await callback.answer()
+    
+    # Начинаем диалог с GPT, создаём пустой JSON для данных
+    event_data = {}
 
-    # Начинаем процесс создания события
-    event_data = {
-        "Название": None,
-        "Дата": None,
-        "Время": None,
-        "Место": None,
-        "Адрес": None,
-        "Тип события": None,
-        "Гости": []
-    }
+    # Получаем первый вопрос
+    response = get_event_creation_response(event_data)
 
-    prompt = f"""
-    Ты — ассистент в Telegram-боте, который строго ведёт пользователя по шагам создания события.
-    Ты должен:
-    
-    1. Общаться с пользователем только в формате **вопрос → ответ**.
-    2. Хранить и обновлять данные в JSON.
-    3. Не давать советов, не объяснять ничего дополнительно.
-    4. Не уходить в сторону от темы **создания события**.
-    
-    Уже собранные данные:
-    {json.dumps(event_data, ensure_ascii=False)}
-    
-    Ответ пользователя:
-    "{user_input}"
-    
-    Что нужно сделать:
-    - Обнови JSON, если это был осмысленный ответ.
-    - Если есть незаполненные поля — задай **один** следующий вопрос.
-    - Если все поля заполнены — напиши **"Готово"**, а затем **выведи JSON**.
-    
-    Отвечай только вопросами или финальным JSON. Никаких пояснений!
-    """
-
-    response = get_gpt_response(prompt)
-    
+    # Сохраняем состояние
     await state.update_data(event_data=event_data)
     await state.set_state(EventCreationStates.collecting_data)
+    
     await callback.message.answer(response)
 
 @router.message(EventCreationStates.collecting_data)
 async def process_user_input(message: types.Message, state: FSMContext):
     user_input = message.text.strip()
-
-    # Получаем текущее состояние и уже собранные данные
+    
+    # Получаем текущее состояние
     data = await state.get_data()
-    event_data = data.get("event_data", {})
+    event_data = data.get('event_data', {})
 
-    # Формируем промпт для GPT
-    prompt = f"""
-Ты ассистент, помогающий пользователю пошагово создать событие.
-Вот уже собранные данные (в JSON): {json.dumps(event_data, ensure_ascii=False)}.
-Пользователь ответил: "{user_input}".
-
-1. Обнови JSON с учётом ответа пользователя.
-2. Если ещё есть незаполненные поля — задай следующий вопрос.
-3. Если всё готово — напиши "Готово", а затем выведи итоговый JSON.
-"""
-
-    response = get_gpt_response(prompt)
+    # Получаем ответ от GPT с обновлением JSON
+    response = get_event_creation_response(event_data, user_input)
 
     if "Готово" in response:
         try:
-            # Извлекаем JSON после "Готово"
-            json_part = response.split("Готово", 1)[-1].strip()
-            updated_event_data = json.loads(json_part)
+            event_json_part = response.split("Готово")[-1].strip()
+            event_data = json.loads(event_json_part)
 
-            # Сохраняем в БД
             await create_event(
-                title=updated_event_data.get("Название"),
-                date=updated_event_data.get("Дата"),
-                time=updated_event_data.get("Время"),
-                place=updated_event_data.get("Место"),
-                address=updated_event_data.get("Адрес", None),
-                event_type=updated_event_data.get("Тип события"),
-                guests=updated_event_data.get("Гости", [])
+                title=event_data.get("Название"),
+                date=event_data.get("Дата"),
+                time=event_data.get("Время"),
+                place=event_data.get("Место"),
+                address=event_data.get("Адрес", None),
+                event_type=event_data.get("Тип события"),
+                guests=event_data.get("Гости", [])
             )
 
             await state.clear()
@@ -95,15 +55,14 @@ async def process_user_input(message: types.Message, state: FSMContext):
         except json.JSONDecodeError:
             await message.answer("Ошибка при обработке итоговых данных. Попробуй ещё раз.")
     else:
-        # Пробуем обновить JSON, если GPT уже частично добавил ключи
+        # Попробуем обновить данные, если GPT их уже добавил
         try:
-            # Пробуем вытащить словарь из текста, если он присутствует
             if "{" in response and "}" in response:
                 json_text = response[response.find("{"):response.rfind("}") + 1]
                 new_data = json.loads(json_text)
                 event_data.update(new_data)
         except Exception:
-            pass  # Если парсинг не удался — продолжаем с тем, что есть
+            pass  # Если не получилось — просто продолжаем
 
         await state.update_data(event_data=event_data)
         await message.answer(response)
