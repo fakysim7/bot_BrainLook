@@ -44,41 +44,54 @@ async def start_event_creation(callback: types.CallbackQuery, state: FSMContext)
 async def process_user_input(message: types.Message, state: FSMContext):
     user_input = message.text.strip()
 
-    # Получаем текущее состояние
+    # Получаем текущее состояние и уже собранные данные
     data = await state.get_data()
-    event_data = data.get('event_data', {})
+    event_data = data.get("event_data", {})
 
-    # Определяем, какой ключ сейчас заполняется
-    keys_order = ["Название", "Дата", "Время", "Место", "Адрес", "Тип события", "Гости"]
-    current_key = next((key for key in keys_order if event_data.get(key) is None), None)
+    # Формируем промпт для GPT
+    prompt = f"""
+Ты ассистент, помогающий пользователю пошагово создать событие.
+Вот уже собранные данные (в JSON): {json.dumps(event_data, ensure_ascii=False)}.
+Пользователь ответил: "{user_input}".
 
-    if current_key:
-        event_data[current_key] = user_input
+1. Обнови JSON с учётом ответа пользователя.
+2. Если ещё есть незаполненные поля — задай следующий вопрос.
+3. Если всё готово — напиши "Готово", а затем выведи итоговый JSON.
+"""
 
-    # Проверяем, есть ли ещё незаполненные поля
-    next_key = next((key for key in keys_order if event_data.get(key) is None), None)
+    response = get_gpt_response(prompt)
 
-    if next_key:
-        prompt = f"""
-        Ты ведешь диалог для создания события. Вот что уже известно:
-        {json.dumps(event_data, ensure_ascii=False, indent=2)}
-        
-        Спроси у пользователя {next_key.lower()}.
-        """
-        response = get_gpt_response(prompt)
+    if "Готово" in response:
+        try:
+            # Извлекаем JSON после "Готово"
+            json_part = response.split("Готово", 1)[-1].strip()
+            updated_event_data = json.loads(json_part)
+
+            # Сохраняем в БД
+            await create_event(
+                title=updated_event_data.get("Название"),
+                date=updated_event_data.get("Дата"),
+                time=updated_event_data.get("Время"),
+                place=updated_event_data.get("Место"),
+                address=updated_event_data.get("Адрес", None),
+                event_type=updated_event_data.get("Тип события"),
+                guests=updated_event_data.get("Гости", [])
+            )
+
+            await state.clear()
+            await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
+        except json.JSONDecodeError:
+            await message.answer("Ошибка при обработке итоговых данных. Попробуй ещё раз.")
+    else:
+        # Пробуем обновить JSON, если GPT уже частично добавил ключи
+        try:
+            # Пробуем вытащить словарь из текста, если он присутствует
+            if "{" in response and "}" in response:
+                json_text = response[response.find("{"):response.rfind("}") + 1]
+                new_data = json.loads(json_text)
+                event_data.update(new_data)
+        except Exception:
+            pass  # Если парсинг не удался — продолжаем с тем, что есть
+
         await state.update_data(event_data=event_data)
         await message.answer(response)
-    else:
-        # Все данные собраны, записываем в БД
-        await create_event(
-            title=event_data["Название"],
-            date=event_data["Дата"],
-            time=event_data["Время"],
-            place=event_data["Место"],
-            address=event_data["Адрес"],
-            event_type=event_data["Тип события"],
-            guests=event_data["Гости"]
-        )
-
-        await state.clear()
-        await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
