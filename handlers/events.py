@@ -1,22 +1,12 @@
 from aiogram import types, Router
 from aiogram.fsm.context import FSMContext
 from utils.states import EventCreationStates
-from AI.gpt import get_gpt_response
+from AI.gpt import get_gpt_response, SYSTEM_PROMPT
 from database.crud import create_event
 from keyboards.main_menu import inline_keyboard
 import json
 
 router = Router()
-
-# Системный промт один на весь диалог
-SYSTEM_PROMPT = """
-У тебя задача вести диалог по созданию события.
-
-Твои действия:
-1. Обнови JSON, добавив новый ключ (если это был ответ).
-2. Если ещё есть незаполненные поля — задай новый вопрос.
-3. Если всё заполнено — напиши "Готово" и отдай финальный JSON.
-"""
 
 @router.callback_query(lambda c: c.data == "events")
 async def start_event_creation(callback: types.CallbackQuery, state: FSMContext):
