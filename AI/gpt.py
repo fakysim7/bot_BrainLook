@@ -48,5 +48,23 @@ def get_gpt_response(prompt: str, state: str = "default") -> str:
     except Exception as e:
         return f"Ошибка при запросе к OpenAI: {str(e)}"
 
+def get_event_creation_response(event_data: dict, user_input: str = None) -> str:
+    if user_input is None:
+        prompt = "Ты ведущий диалога для создания события. Сформулируй первый вопрос пользователю."
+    else:
+        prompt = f"""
+        У тебя задача вести диалог по созданию события. 
+        Уже собранные данные (JSON): {json.dumps(event_data, ensure_ascii=False)}
+        Пользователь ответил: "{user_input}".
+        
+        Твои действия:
+        1. Обнови JSON, добавив новый ключ (если это был ответ).
+        2. Если ещё есть незаполненные поля — задай новый вопрос.
+        3. Если всё заполнено — напиши "Готово" и отдай финальный JSON.
+        """
+    
+    return get_gpt_response(prompt, mode="event_creation")
+
+    
 def reset_chat_state(state: str = "default", system_prompt: str = "Ты — дружелюбный помощник."):
     chat_states[state] = [{"role": "system", "content": system_prompt}]
