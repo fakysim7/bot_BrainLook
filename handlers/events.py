@@ -62,7 +62,6 @@ async def process_user_input(message: types.Message, state: FSMContext):
                 time=event_data.get("Время"),
                 place=event_data.get("Место"),
                 address=event_data.get("Адрес", None),
-                event_type=event_data.get("Тип события"),
                 guests=event_data.get("Гости", [])
             )
 
