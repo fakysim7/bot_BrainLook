@@ -4,6 +4,8 @@ from utils.states import EventCreationStates
 from AI.gpt import get_gpt_response
 from database.crud import create_event
 from keyboards.main_menu import inline_keyboard
+from database.connection import get_async_session
+from sqlalchemy.ext.asyncio import AsyncSession
 import json
 import dateparser
 import re
@@ -67,12 +69,14 @@ async def process_user_input(message: types.Message, state: FSMContext):
                 return
 
             # Сохранение в базу
+
             await create_event(
+                session=session,
                 title=event_data["Название"],
                 date=event_data["Дата"],
                 time=event_data["Время"],
                 place=event_data["Место"],
-                address=event_data.get("Адрес", None),
+                address=event_data.get("Адрес"),
                 event_type=event_data["Тип события"],
                 guests=event_data.get("Гости", [])
             )
