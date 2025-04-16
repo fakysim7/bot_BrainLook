@@ -6,9 +6,8 @@ from config import Config
 
 DATABASE_URL = Config.DATABASE_URL
 
-# Создание движка и сессии
-engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+SessionLocal = sessionmaker(bind=engine)
 
-# Базовый класс для моделей
-Base = declarative_base()
+def get_sync_session():
+    return SessionLocal()
