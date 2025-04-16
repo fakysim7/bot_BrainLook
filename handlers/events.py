@@ -1,17 +1,13 @@
-#handlers/events.py
 from aiogram import types, Router
 from aiogram.fsm.context import FSMContext
 from utils.states import EventCreationStates
-from AI.gpt import get_gpt_response
+from AI.gpt import get_gpt_response, SYSTEM_PROMPT
 from database.crud import create_event
 from keyboards.main_menu import inline_keyboard
-from database.connection import get_async_session
-from sqlalchemy.ext.asyncio import AsyncSession
 import json
-import dateparser
-import re
 
 router = Router()
+
 
 @router.callback_query(lambda c: c.data == "events")
 async def start_event_creation(callback: types.CallbackQuery, state: FSMContext):
@@ -21,6 +17,7 @@ async def start_event_creation(callback: types.CallbackQuery, state: FSMContext)
     messages = [user_message]
 
     response = get_gpt_response(messages)
+
     messages.append({"role": "assistant", "content": response})
 
     await state.update_data(event_data={}, chat_history=messages)
@@ -32,73 +29,48 @@ async def start_event_creation(callback: types.CallbackQuery, state: FSMContext)
 @router.message(EventCreationStates.collecting_data)
 async def process_user_input(message: types.Message, state: FSMContext):
     user_input = message.text.strip()
-    data = await state.get_data()
-    event_data = data.get("event_data", {})
-    chat_history = data.get("chat_history", [])
 
-    # Добавляем текущий ввод в историю
+    data = await state.get_data()
+    chat_history = data.get("chat_history", [])
+    event_data = data.get("event_data", {})
+
+    # Добавляем новый ввод пользователя
     chat_history.append({"role": "user", "content": user_input})
 
-    # Обновлённый system prompt для GPT
-    system_prompt = f"""
-    Ты помогаешь создать событие. Текущие данные:
-    {json.dumps(event_data, ensure_ascii=False)}
-    
-    Правила:
-    1. Добавляй полученные данные в JSON
-    2. Спрашивай по одному вопросу за раз
-    3. Когда все данные собраны, верни JSON в ```json ``` без дополнительного текста
-    4. Обязательные поля: название, дата, время, место, цель
-    """
+    # Добавляем текущий JSON в виде текста — GPT сам поймет контекст
+    chat_history.append({
+        "role": "user",
+        "content": f"Текущий JSON: {json.dumps(event_data, ensure_ascii=False)}"
+    })
 
-    try:
-        # Получаем ответ от GPT
-        response = get_gpt_response(
-            [{"role": "system", "content": system_prompt}] + chat_history
-        )
-        
-        # Проверяем, содержит ли ответ завершённый JSON
-        if "```json" in response:
-            json_match = re.search(r"```json\s*({.*?})\s*```", response, re.DOTALL)
-            if json_match:
-                event_data = json.loads(json_match.group(1))
-                
-                # Проверяем обязательные поля
-                required_fields = ["название", "дата", "время", "место", "цель"]
-                if all(field in event_data for field in required_fields):
-                    # Сохраняем событие
-                    async with get_async_session() as session:
-                        await create_event(
-                            session=session,
-                            title=event_data["название"],
-                            date=event_data["дата"],
-                            time=event_data["время"],
-                            location=event_data["место"],
-                            purpose=event_data["цель"],
-                            participants=event_data.get("участники", 0),
-                            notes=event_data.get("примечания", "")
-                        )
-                    
-                    await state.clear()
-                    await message.answer(
-                        "Событие успешно создано! ✅\n"
-                        f"Название: {event_data['название']}\n"
-                        f"Дата: {event_data['дата']}\n"
-                        f"Место: {event_data['место']}",
-                        reply_markup=inline_keyboard
-                    )
-                    return
-                else:
-                    missing = [f for f in required_fields if f not in event_data]
-                    await message.answer(f"Не хватает данных: {', '.join(missing)}")
-            else:
-                await message.answer("Не удалось обработать данные события")
-        
-        # Если JSON не завершён, продолжаем диалог
+    response = get_gpt_response(chat_history)
+
+    # Удаляем сообщение с JSON, чтобы история была чище
+    chat_history.pop()
+
+    # Добавляем ответ GPT
+    chat_history.append({"role": "assistant", "content": response})
+
+    if "Готово" in response:
+        try:
+            extracted_json = response.split("Готово")[-1].strip()
+            event_data = json.loads(extracted_json)
+
+            await create_event(
+                title=event_data.get("Название"),
+                date=event_data.get("Дата"),
+                time=event_data.get("Время"),
+                place=event_data.get("Место"),
+                address=event_data.get("Адрес", None),
+                event_type=event_data.get("Тип события"),
+                guests=event_data.get("Гости", [])
+            )
+
+            await state.clear()
+            await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
+
+        except Exception as e:
+            await message.answer(f"Ошибка при создании события: {str(e)}")
+    else:
         await state.update_data(event_data=event_data, chat_history=chat_history)
-        await message.answer(response)
-
-    except Exception as e:
-        await message.answer(f"Ошибка: {str(e)}")
-        await state.update_data(chat_history=chat_history)
         await message.answer(response)
