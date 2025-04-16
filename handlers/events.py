@@ -66,7 +66,8 @@ async def process_user_input(message: types.Message, state: FSMContext):
                         title=event_data.get("Название"),
                         date=event_data.get("Дата"),
                         duration=event_data.get("Длительность"),
-                        # остальные поля
+                        place=event_data["Место"],
+                        address=event_data.get("Адрес")
                     )
                 
                 await state.clear()
