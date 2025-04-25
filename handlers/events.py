@@ -1,12 +1,21 @@
 from aiogram import types, Router
 from aiogram.fsm.context import FSMContext
 from utils.states import EventCreationStates
-from AI.gpt import get_gpt_response, SYSTEM_PROMPT
-from database.crud import create_event
-from keyboards.main_menu import inline_keyboard
+from AI.gpt import get_gpt_response
 import json
+import csv
+import os
 
 router = Router()
+
+
+CSV_FILE_PATH = "events.csv"
+
+# Создание CSV-файла с заголовками, если он ещё не существует
+if not os.path.exists(CSV_FILE_PATH):
+    with open(CSV_FILE_PATH, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Название", "Дата", "Время", "Место", "Адрес", "Тип события", "Гости"])
 
 
 @router.callback_query(lambda c: c.data == "events")
@@ -17,7 +26,6 @@ async def start_event_creation(callback: types.CallbackQuery, state: FSMContext)
     messages = [user_message]
 
     response = get_gpt_response(messages)
-
     messages.append({"role": "assistant", "content": response})
 
     await state.update_data(event_data={}, chat_history=messages)
@@ -34,10 +42,7 @@ async def process_user_input(message: types.Message, state: FSMContext):
     chat_history = data.get("chat_history", [])
     event_data = data.get("event_data", {})
 
-    # Добавляем новый ввод пользователя
     chat_history.append({"role": "user", "content": user_input})
-
-    # Добавляем текущий JSON в виде текста — GPT сам поймет контекст
     chat_history.append({
         "role": "user",
         "content": f"Текущий JSON: {json.dumps(event_data, ensure_ascii=False)}"
@@ -45,10 +50,7 @@ async def process_user_input(message: types.Message, state: FSMContext):
 
     response = get_gpt_response(chat_history)
 
-    # Удаляем сообщение с JSON, чтобы история была чище
     chat_history.pop()
-
-    # Добавляем ответ GPT
     chat_history.append({"role": "assistant", "content": response})
 
     if "Готово" in response:
@@ -56,20 +58,22 @@ async def process_user_input(message: types.Message, state: FSMContext):
             extracted_json = response.split("Готово")[-1].strip()
             event_data = json.loads(extracted_json)
 
-            await create_event(
-                title=event_data.get("Название"),
-                date=event_data.get("Дата"),
-                time=event_data.get("Время"),
-                place=event_data.get("Место"),
-                address=event_data.get("Адрес", None),
-                guests=event_data.get("Гости", [])
-            )
+            with open(CSV_FILE_PATH, "a", newline="", encoding="utf-8") as f:
+                writer = csv.writer(f)
+                writer.writerow([
+                    event_data.get("Название"),
+                    event_data.get("Дата"),
+                    event_data.get("Время"),
+                    event_data.get("Место"),
+                    event_data.get("Адрес", ""),
+                    event_data.get("Тип события"),
+                    ", ".join(event_data.get("Гости", []))
+                ])
 
             await state.clear()
-            await message.answer("Событие успешно создано! Возвращаемся в главное меню.", reply_markup=inline_keyboard)
-
+            await message.answer("Событие успешно создано и сохранено в CSV!")
         except Exception as e:
-            await message.answer(f"Ошибка при создании события: {str(e)}")
+            await message.answer(f"Ошибка при сохранении события: {str(e)}")
     else:
         await state.update_data(event_data=event_data, chat_history=chat_history)
         await message.answer(response)
