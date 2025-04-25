@@ -32,7 +32,7 @@ def get_gpt_response(messages: list[dict]) -> str:
         full_messages = [{"role": "system", "content": SYSTEM_PROMPT}] + messages  # ✅ Списки объединяются правильно
 
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="4o",
             messages=full_messages
         )
 
